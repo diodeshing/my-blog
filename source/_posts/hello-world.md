@@ -1,6 +1,7 @@
 ---
 title: Hello World：我的 AI 助手帮我搭建了这个博客
 date: 2026-03-28 19:55:00
+sticky: 1
 tags:
   - Hexo
   - AI
