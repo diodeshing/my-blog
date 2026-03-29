@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>5 个让你少写 80% 代码的 Python 技巧 | 击穿二极管</title><meta name="author" content="diodeshing"><meta name="copyright" content="diodeshing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="列表推导、上下文管理器、海象运算符等 5 个 Python 高效写法，告别冗余代码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5 个让你少写 80% 代码的 Python 技巧">
+<meta property="og:url" content="https://diodeshing.github.io/2026/03/28/python-tips/index.html">
+<meta property="og:site_name" content="击穿二极管">
+<meta property="og:description" content="列表推导、上下文管理器、海象运算符等 5 个 Python 高效写法，告别冗余代码。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://diodeshing.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2026-03-28T12:21:00.000Z">
+<meta property="article:modified_time" content="2026-03-29T12:32:48.080Z">
+<meta property="article:author" content="diodeshing">
+<meta property="article:tag" content="效率">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="编程技巧">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://diodeshing.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "5 个让你少写 80% 代码的 Python 技巧",
+  "url": "https://diodeshing.github.io/2026/03/28/python-tips/",
+  "image": "https://diodeshing.github.io/img/butterfly-icon.png",
+  "datePublished": "2026-03-28T12:21:00.000Z",
+  "dateModified": "2026-03-29T12:32:48.080Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "diodeshing",
+      "url": "https://diodeshing.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/my-blog/img/favicon.png"><link rel="canonical" href="https://diodeshing.github.io/2026/03/28/python-tips/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/my-blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/my-blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '5 个让你少写 80% 代码的 Python 技巧',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/my-blog/"><span class="site-name">击穿二极管</span></a><a class="nav-page-title" href="/my-blog/"><span class="site-name">5 个让你少写 80% 代码的 Python 技巧</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">5 个让你少写 80% 代码的 Python 技巧</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-28T12:21:00.000Z" title="发表于 2026-03-28 20:21:00">2026-03-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-29T12:32:48.080Z" title="更新于 2026-03-29 20:32:48">2026-03-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/my-blog/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="5-个让你少写-80-代码的-Python-技巧"><a href="#5-个让你少写-80-代码的-Python-技巧" class="headerlink" title="5 个让你少写 80% 代码的 Python 技巧"></a>5 个让你少写 80% 代码的 Python 技巧</h1><p>很多人写 Python 的方式还停留在”翻译 Java”的阶段。其实 Python 有很多语法糖，能让你的代码短一半还更清晰。</p>
+<h2 id="1-列表推导式"><a href="#1-列表推导式" class="headerlink" title="1. 列表推导式"></a>1. 列表推导式</h2><p><strong>❌ 笨拙写法：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result = []</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        result.append(x ** <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>✅ 一行搞定：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = [x ** <span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>) <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>]</span><br><span class="line"><span class="comment"># [0, 4, 16, 36, 64]</span></span><br></pre></td></tr></table></figure>
+
+<p>字典推导也一样：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">word_lengths = &#123;w: <span class="built_in">len</span>(w) <span class="keyword">for</span> w <span class="keyword">in</span> [<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;world&quot;</span>, <span class="string">&quot;python&quot;</span>]&#125;</span><br><span class="line"><span class="comment"># &#123;&#x27;hello&#x27;: 5, &#x27;world&#x27;: 5, &#x27;python&#x27;: 6&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-with-语句（上下文管理器）"><a href="#2-with-语句（上下文管理器）" class="headerlink" title="2. with 语句（上下文管理器）"></a>2. with 语句（上下文管理器）</h2><p><strong>❌ 忘记关文件：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;data.txt&quot;</span>, <span class="string">&quot;r&quot;</span>)</span><br><span class="line">data = f.read()</span><br><span class="line">f.close()  <span class="comment"># 容易忘，异常时更危险</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>✅ 自动管理：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;data.txt&quot;</span>, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = f.read()</span><br><span class="line"><span class="comment"># 出了 with 块，文件自动关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>自定义上下文管理器：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> contextmanager</span><br><span class="line"></span><br><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timer</span>(<span class="params">label</span>):</span><br><span class="line">    <span class="keyword">import</span> time</span><br><span class="line">    start = time.time()</span><br><span class="line">    <span class="keyword">yield</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;label&#125;</span>: <span class="subst">&#123;time.time() - start:<span class="number">.2</span>f&#125;</span>s&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> timer(<span class="string">&quot;数据处理&quot;</span>):</span><br><span class="line">    <span class="comment"># 你的代码</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-海象运算符-（Python-3-8-）"><a href="#3-海象运算符-（Python-3-8-）" class="headerlink" title="3. 海象运算符 :=（Python 3.8+）"></a>3. 海象运算符 <code>:=</code>（Python 3.8+）</h2><p>避免重复计算同一表达式：</p>
+<p><strong>❌ 重复调用：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data = get_large_data()</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(data) &gt; <span class="number">100</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;数据量: <span class="subst">&#123;<span class="built_in">len</span>(data)&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>✅ 只算一次：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (n := <span class="built_in">len</span>(get_large_data())) &gt; <span class="number">100</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;数据量: <span class="subst">&#123;n&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>正则匹配场景特别好用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">if</span> (m := re.search(<span class="string">r&#x27;\d+&#x27;</span>, text)):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;找到数字: <span class="subst">&#123;m.group()&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-解包赋值"><a href="#4-解包赋值" class="headerlink" title="4. 解包赋值"></a>4. 解包赋值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 交换变量</span></span><br><span class="line">a, b = b, a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 忽略不需要的值</span></span><br><span class="line">first, *rest = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="comment"># first=1, rest=[2,3,4,5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数返回多值</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_user</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;张三&quot;</span>, <span class="number">25</span>, <span class="string">&quot;dev&quot;</span></span><br><span class="line"></span><br><span class="line">name, age, role = get_user()</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-f-string-的隐藏能力"><a href="#5-f-string-的隐藏能力" class="headerlink" title="5. f-string 的隐藏能力"></a>5. f-string 的隐藏能力</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;Python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;name:=^<span class="number">30</span>&#125;</span>&quot;</span>)  <span class="comment"># =========Python==========</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调试神器（Python 3.8+）</span></span><br><span class="line">x = <span class="number">42</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x = &#125;</span>&quot;</span>)        <span class="comment"># x = 42</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;x + <span class="number">1</span> = &#125;</span>&quot;</span>)    <span class="comment"># x + 1 = 43</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式化数字</span></span><br><span class="line">price = <span class="number">1234567.89</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;¥<span class="subst">&#123;price:,<span class="number">.2</span>f&#125;</span>&quot;</span>)  <span class="comment"># ¥1,234,567.89</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>技巧</th>
+<th>替代</th>
+<th>省代码量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>列表推导</td>
+<td>for + append</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>with 语句</td>
+<td>try&#x2F;finally</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>海象运算符</td>
+<td>重复表达式</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>解包赋值</td>
+<td>逐个赋值</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>f-string</td>
+<td>format()</td>
+<td>30%</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>好代码不是写得少，是<strong>用最少的字表达最清晰的意思</strong>。Python 的语法糖不是为了炫技，而是为了让意图更明确。</p>
+</blockquote>
+<hr>
+<p><em>更多 Python 技巧关注 <a href="https://diodeshing.github.io/my-blog/">击穿二极管</a>，欢迎 Star <a target="_blank" rel="noopener" href="https://github.com/diodeshing">GitHub</a>。</em></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://diodeshing.github.io">diodeshing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://diodeshing.github.io/2026/03/28/python-tips/">https://diodeshing.github.io/2026/03/28/python-tips/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://diodeshing.github.io" target="_blank">击穿二极管</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/my-blog/tags/%E6%95%88%E7%8E%87/">效率</a><a class="post-meta__tags" href="/my-blog/tags/Python/">Python</a><a class="post-meta__tags" href="/my-blog/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧</a></div><div class="post-share"><div class="social-share" data-image="/my-blog/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/my-blog/2026/03/28/terminal-beautify/" title="终端美化指南：让你的命令行好看 10 倍"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">终端美化指南：让你的命令行好看 10 倍</div></div><div class="info-2"><div class="info-item-1">终端美化指南：让你的命令行好看 10 倍默认终端又丑又难用。花 10 分钟配置一下，体验完全不同。 核心组件1234终端模拟器（Windows Terminal / iTerm2）  └── Shell（Zsh / PowerShell）       └── 主题引擎（Starship / Oh My Zsh）            └── 插件（自动补全、语法高亮、git 状态）  Windows 方案1. 安装 Windows Terminal1winget install Microsoft.WindowsTerminal  2. 安装 Nerd Font推荐 CaskaydiaCove Nerd Font： 12# 用 scoop 安装scoop install CascadiaCode-NF 然后在 Windows Terminal 设置里把字体改成 CaskaydiaCove NF。 3. 安装 Starship（跨平台主题）1winget install Starship.Starship  在 PowerShell 配置文件末尾加一行： 12345# 编辑 $PR...</div></div></div></a><a class="pagination-related" href="/my-blog/2026/03/28/ai-agent-dev-env/" title="AI 智能体帮我配好了整个开发环境"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">AI 智能体帮我配好了整个开发环境</div></div><div class="info-2"><div class="info-item-1">AI 智能体帮我配好了整个开发环境今天做了一个实验：完全不自己动手，让 AI 智能体帮我搭建开发环境。 结果是：一个小时之内，我从一台全新的电脑，变成了一个拥有完整开发环境、GitHub 工具链、飞书集成、甚至还有一个上线博客的开发者。 传统配环境有多痛苦每个开发者都经历过这样的场景：  装 Node.js，版本不对，卸了重装 配 Git，SSH key 生成了但不知道放哪 装 VS Code 插件，装了一半忘了装了哪些 配置 SSH、代理、环境变量，搞了一下午 最后发现某个工具漏装了，又从头排查  整个过程充满了重复劳动和上下文切换。而这恰好是 AI 最擅长的事。 AI 智能体做了什么这次我用的是 OpenClaw（一个 AI 智能体框架），让它接管了所有配置工作。 1. 安装工具链12用户：&quot;帮我安装 GitHub CLI&quot;AI：  自动执行 winget install → 验证版本 → 配置认证 → 测试连接  不需要我查命令，不需要我记参数，AI 直接搞定。 2. 搭建博客12用户：&quot;帮我建一个博客&quot;AI：  搜索框架 → 对比选...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/my-blog/2026/03/28/ai-agent-dev-env/" title="AI 智能体帮我配好了整个开发环境"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-28</div><div class="info-item-2">AI 智能体帮我配好了整个开发环境</div></div><div class="info-2"><div class="info-item-1">AI 智能体帮我配好了整个开发环境今天做了一个实验：完全不自己动手，让 AI 智能体帮我搭建开发环境。 结果是：一个小时之内，我从一台全新的电脑，变成了一个拥有完整开发环境、GitHub 工具链、飞书集成、甚至还有一个上线博客的开发者。 传统配环境有多痛苦每个开发者都经历过这样的场景：  装 Node.js，版本不对，卸了重装 配 Git，SSH key 生成了但不知道放哪 装 VS Code 插件，装了一半忘了装了哪些 配置 SSH、代理、环境变量，搞了一下午 最后发现某个工具漏装了，又从头排查  整个过程充满了重复劳动和上下文切换。而这恰好是 AI 最擅长的事。 AI 智能体做了什么这次我用的是 OpenClaw（一个 AI 智能体框架），让它接管了所有配置工作。 1. 安装工具链12用户：&quot;帮我安装 GitHub CLI&quot;AI：  自动执行 winget install → 验证版本 → 配置认证 → 测试连接  不需要我查命令，不需要我记参数，AI 直接搞定。 2. 搭建博客12用户：&quot;帮我建一个博客&quot;AI：  搜索框架 → 对比选...</div></div></div></a><a class="pagination-related" href="/my-blog/2026/03/28/git-commit-guide/" title="Git 提交信息写法指南：告别 &#39;fix bug&#39; 和 &#39;update&#39;"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-28</div><div class="info-item-2">Git 提交信息写法指南：告别 &#39;fix bug&#39; 和 &#39;update&#39;</div></div><div class="info-2"><div class="info-item-1">Git 提交信息写法指南：告别 “fix bug” 和 “update”你的 Git 提交记录是不是这样的？ 12345fixupdate修改bug改了点东西  看一眼就头疼。来学一套简单的规范。 格式123&lt;类型&gt;: &lt;简短描述&gt;&lt;可选的详细说明&gt;  类型速查   类型 用途 示例    feat 新功能 feat: 添加用户登录功能   fix 修复 bug fix: 修复空指针异常   docs 文档更新 docs: 更新 README 安装说明   style 格式调整（不影响逻辑） style: 统一缩进为 2 空格   refactor 重构（无功能变化） refactor: 拆分 utils 模块   perf 性能优化 perf: 优化查询缓存逻辑   test 测试相关 test: 添加登录接口单元测试   chore 构建&#x2F;工具变更 chore: 升级 webpack 到 v5   实例对比❌ 垃圾提交： 123git commit -m &quot;fix bug&quot;git commit -m &quot...</div></div></div></a><a class="pagination-related" href="/my-blog/2026/03/29/skill-data-analyzer/" title="AI 技能 #05：数据分析 — 丢数据进去，拿洞察出来"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-29</div><div class="info-item-2">AI 技能 #05：数据分析 — 丢数据进去，拿洞察出来</div></div><div class="info-2"><div class="info-item-1">AI 技能 #05：数据分析 — 丢数据进去，拿洞察出来 不需要会 pandas，丢个 CSV 过来就能得到分析报告。  这个技能能做什么？ 统计摘要：均值、中位数、分布、缺失值 趋势分析：时间序列变化、增长率 异常检测：哪些数据点不合群 可视化建议：告诉你该画什么图、怎么画 洞察输出：用文字解释数据说了什么  支持的格式CSV ✅ JSON ✅ JSONL ✅ 日志文件 ✅ TSV ✅ Excel（需 pandas）✅ 怎么用？1234&quot;分析一下 D:\data\sales.csv&quot;&quot;这个 JSON 文件的数据结构是什么&quot;&quot;帮我看看 access.log 有没有异常请求&quot;&quot;这份数据有什么趋势？&quot;  输出示例AI 会给你：  数据概览：行数、列数、数据类型 统计摘要：每列的关键指标 缺失值报告：哪些列有空值 异常发现：离群点、不合理数据 可视化建议：推荐图表类型 + Python 代码 一句话洞察：数据告诉你什么  技术栈 pandas — 数据处理 matplotlib &#x2F; seaborn...</div></div></div></a><a class="pagination-related" href="/my-blog/2026/03/29/skill-code-helper/" title="AI 技能 #01：代码助手 — 你说需求，AI 写代码"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-29</div><div class="info-item-2">AI 技能 #01：代码助手 — 你说需求，AI 写代码</div></div><div class="info-2"><div class="info-item-1">AI 技能 #01：代码助手 — 你说需求，AI 写代码 不是 Copilot 那种补全几行代码，是真正理解需求、写完整模块的能力。  这个技能能做什么？ 写代码：描述需求，直接生成可运行的代码 调 Bug：贴错误信息，自动定位并修复 解释代码：看不懂的代码，让它讲清楚 Code Review：审查代码质量、安全隐患、性能问题 重构：优化代码结构，不改功能  支持的语言Python ✅ JavaScript ✅ TypeScript ✅ Shell&#x2F;Bash ✅ HTML&#x2F;CSS ✅ SQL ✅ 怎么用？写代码123&quot;写一个 Python 函数，输入 CSV 路径，返回每列的统计摘要&quot;&quot;用 JavaScript 写一个防抖函数&quot;&quot;写一个 Shell 脚本批量重命名 .jpeg 为 .jpg&quot;  调 Bug12&quot;这段代码报错了：[粘贴错误信息]，帮我看看&quot;&quot;这个函数返回的结果不对，预期是 X 但实际是 Y&quot;  Code Review1234&quot;Review...</div></div></div></a><a class="pagination-related" href="/my-blog/2026/03/28/markdown-quick-start/" title="Markdown 速成：10 分钟掌握写作必备语法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-28</div><div class="info-item-2">Markdown 速成：10 分钟掌握写作必备语法</div></div><div class="info-2"><div class="info-item-1">Markdown 速成：10 分钟掌握写作必备语法Markdown 是程序员的”写作语言”。学一次，写博客、文档、README 全都能用。 标题123# 一级标题## 二级标题### 三级标题  文本样式12345**加粗***斜体*~~删除线~~`行内代码`&gt; 引用  列表1234567891011无序列表：- 第一项- 第二项有序列表：1. 第一步2. 第二步任务列表：- [x] 已完成- [ ] 待完成  代码块1234```pythondef hello():    print(&quot;Hello World&quot;)```  常用语言标记：python javascript bash json yaml 链接和图片12[链接文字](https://example.com)![图片描述](https://example.com/img.png)  表格1234| 姓名 | 年龄 | 职业 ||------|------|------|| 张三 | 25   | 开发 || 李四 | 30   | 设计 |  分割线1---  转义字符12\* 不会变斜体\#...</div></div></div></a><a class="pagination-related" href="/my-blog/2026/03/28/ai-coding-guide/" title="如何用 AI 写代码：不是替代你，是加速你"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-28</div><div class="info-item-2">如何用 AI 写代码：不是替代你，是加速你</div></div><div class="info-2"><div class="info-item-1">如何用 AI 写代码：不是替代你，是加速你AI 写代码的能力越来越强，但大多数人的用法是错的。 常见误区❌ 把 AI 当搜索引擎用  “帮我写一个完整的电商平台”→ 生成 2000 行代码，你根本看不懂，也不敢用  ❌ 完全不审核就复制粘贴  → 代码能跑，但有安全隐患、性能问题、风格不一致  ❌ 用它做它不擅长的事  → “帮我判断这个 UI 设计好不好看” — AI 没有审美  正确用法1. 让 AI 写样板代码123你：写一个 Express.js 的用户 CRUD 接口，用 MongoDBAI：（生成 router 文件，包含增删改查）你：（检查 + 修改 + 集成到项目）  省时间：40 分钟 → 5 分钟 2. 让 AI 解释你不理解的代码12你：解释这段代码在做什么（贴代码）AI：逐行解释 + 标注关键点  3. 让 AI 写测试12你：为这个函数写单元测试（贴函数）AI：生成测试用例，包含边界条件  4. 让 AI 帮你调试12你：这段代码报了 XXX 错误（贴代码 + 错误信息）AI：分析原因 + 给出修复方案  提示词技巧好的提示词12345用 Python ...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/my-blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/my-blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">diodeshing</div><div class="author-info-description">一名开发者的个人技术博客，分享 AI、编程与开源工具的实践经验。</div><div class="site-data"><a href="/my-blog/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/my-blog/tags/"><div class="headline">标签</div><div class="length-num">69</div></a><a href="/my-blog/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%B8%AA%E8%AE%A9%E4%BD%A0%E5%B0%91%E5%86%99-80-%E4%BB%A3%E7%A0%81%E7%9A%84-Python-%E6%8A%80%E5%B7%A7"><span class="toc-number">1.</span> <span class="toc-text">5 个让你少写 80% 代码的 Python 技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1. 列表推导式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-with-%E8%AF%AD%E5%8F%A5%EF%BC%88%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">2. with 语句（上下文管理器）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B5%B7%E8%B1%A1%E8%BF%90%E7%AE%97%E7%AC%A6-%EF%BC%88Python-3-8-%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">3. 海象运算符 :&#x3D;（Python 3.8+）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%A7%A3%E5%8C%85%E8%B5%8B%E5%80%BC"><span class="toc-number">1.4.</span> <span class="toc-text">4. 解包赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-f-string-%E7%9A%84%E9%9A%90%E8%97%8F%E8%83%BD%E5%8A%9B"><span class="toc-number">1.5.</span> <span class="toc-text">5. f-string 的隐藏能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/daily-2026-03-29/" title="每日总结 2026-03-29 | ARIS科研 + 论文完成">每日总结 2026-03-29 | ARIS科研 + 论文完成</a><time datetime="2026-03-29T12:20:00.000Z" title="发表于 2026-03-29 20:20:00">2026-03-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/skill-test-report-2026-03-29/" title="18个AI技能全测试 - 本地Ollama模型实测报告">18个AI技能全测试 - 本地Ollama模型实测报告</a><time datetime="2026-03-29T04:50:00.000Z" title="发表于 2026-03-29 12:50:00">2026-03-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/skill-blog-post/" title="AI技能附录 - 写博客发布 - 从想法到上线的最短路径">AI技能附录 - 写博客发布 - 从想法到上线的最短路径</a><time datetime="2026-03-29T03:35:00.000Z" title="发表于 2026-03-29 11:35:00">2026-03-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/skill-openclaw-mastery/" title="AI技能 #20 - OpenClaw掌握 - 了解AI智能体的一切">AI技能 #20 - OpenClaw掌握 - 了解AI智能体的一切</a><time datetime="2026-03-29T03:34:00.000Z" title="发表于 2026-03-29 11:34:00">2026-03-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/skill-file-manager/" title="AI 技能 #19：文件管理 — 智能整理你的文件">AI 技能 #19：文件管理 — 智能整理你的文件</a><time datetime="2026-03-29T03:33:00.000Z" title="发表于 2026-03-29 11:33:00">2026-03-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By diodeshing</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/my-blog/js/utils.js?v=5.5.4"></script><script src="/my-blog/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>击穿二极管 - 探索 AI 与编程的无限可能</title><meta name="author" content="diodeshing"><meta name="copyright" content="diodeshing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一名开发者的个人技术博客，分享 AI、编程与开源工具的实践经验。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="击穿二极管">
+<meta property="og:url" content="https://diodeshing.github.io/page/3/index.html">
+<meta property="og:site_name" content="击穿二极管">
+<meta property="og:description" content="一名开发者的个人技术博客，分享 AI、编程与开源工具的实践经验。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://diodeshing.github.io/img/butterfly-icon.png">
+<meta property="article:author" content="diodeshing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://diodeshing.github.io/img/butterfly-icon.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/my-blog/img/favicon.png"><link rel="canonical" href="https://diodeshing.github.io/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/my-blog/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/my-blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '击穿二极管',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script></head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/my-blog/"><span class="site-name">击穿二极管</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">击穿二极管</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/29/skill-api-tester/" title="AI 技能 #04：API 测试器 — 你的本地 Postman">AI 技能 #04：API 测试器 — 你的本地 Postman</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-29T03:18:00.000Z" title="发表于 2026-03-29 11:18:00">2026-03-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/AI-%E5%BC%80%E5%8F%91/">AI 开发</a></span></div><div class="content">AI 技能 #04：API 测试器 — 你的本地 Postman 不用打开 Postman，直接说”调一下这个接口”就行。  这个技能能做什么？ 调任意 HTTP 接口：GET&#x2F;POST&#x2F;PUT&#x2F;DELETE&#x2F;PATCH 全支持 自动解析响应：JSON&#x2F;XML&#x2F;HTML&#x2F;CSV 自动识别 错误分析：4xx&#x2F;5xx 不是给你看状态码，是解释为什么错了 带认证：Bearer Token、API Key、Basic Auth 全支持 文件上传：multipart&#x2F;form-data 也能搞  怎么用？GET 请求12&quot;调一下 https://api.github.com/users/torvalds&quot;&quot;看看 httpbin.org/get 返回什么&quot;  POST 请求1&quot;POST https://api.example.com/login，Body 是 &#123;\&quot;user\&quot;:\&quot;admin\&quot;,\&q...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/29/skill-terminal-executor/" title="AI 技能 #03：终端执行器 — 带安全网的命令行">AI 技能 #03：终端执行器 — 带安全网的命令行</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-29T03:17:00.000Z" title="发表于 2026-03-29 11:17:00">2026-03-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/AI-%E5%BC%80%E5%8F%91/">AI 开发</a></span></div><div class="content">AI 技能 #03：终端执行器 — 带安全网的命令行 不是让它随便跑 rm -rf，是有分级权限的安全执行框架。  这个技能能做什么？ 执行系统命令（pip install、git commit、dir 等） 自动分级：只读免审，危险拦截 越界报备：访问工作区外的目录需要说明原因 超时保护：命令超过 60 秒自动终止 完整日志：谁在什么时候跑了什么命令  权限分级   级别 说明 示例    🟢 Level 0 免审只读 dir、cat、python --version   🟡 Level 1 工作区内操作 pip install、git commit   🟠 Level 2 越界需报备 访问 D:\、全局安装   🔴 Level 3 危险拦截 rm -rf、format、del *.*   怎么用？直接说人话： 1234&quot;帮我看一下 D:\ 目录有哪些大文件&quot;&quot;pip install pandas&quot;&quot;看看 git status&quot;&quot;清理一下 temp 目录&quot;  AI 会判断权限等级，安全的直接...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/29/skill-github/" title="AI 技能 #02：GitHub 操作 — 用自然语言管仓库">AI 技能 #02：GitHub 操作 — 用自然语言管仓库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-29T03:16:00.000Z" title="发表于 2026-03-29 11:16:00">2026-03-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/AI-%E5%BC%80%E5%8F%91/">AI 开发</a></span></div><div class="content">AI 技能 #02：GitHub 操作 — 用自然语言管仓库 “帮我看看 main 分支最近 5 个 commit” 比 git log --oneline -5 好记多了。  这个技能能做什么？ Issue 管理：查看、创建、关闭 Issue PR 操作：创建 PR、查看差异、合并代码 CI&#x2F;CD：查看工作流状态、触发部署 仓库操作：查看 commit、分支、标签 代码搜索：跨仓库搜索代码片段  怎么用？Issue 操作1234&quot;看看这个仓库有什么 open issues&quot;&quot;创建一个 Issue：标题是 xxx，描述是 yyy&quot;&quot;关闭 issue #42&quot;&quot;给 issue 打上 bug 标签&quot;  PR 操作1234&quot;看看 open 的 PR 有哪些&quot;&quot;创建一个 PR 从 feature 分支到 main&quot;&quot;查看 PR #15 的 diff&quot;&quot;合并 PR #15&quot;  CI&#x2F;CD123&quot;最近的 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/29/skill-code-helper/" title="AI 技能 #01：代码助手 — 你说需求，AI 写代码">AI 技能 #01：代码助手 — 你说需求，AI 写代码</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-29T03:15:00.000Z" title="发表于 2026-03-29 11:15:00">2026-03-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/AI-%E5%BC%80%E5%8F%91/">AI 开发</a></span></div><div class="content">AI 技能 #01：代码助手 — 你说需求，AI 写代码 不是 Copilot 那种补全几行代码，是真正理解需求、写完整模块的能力。  这个技能能做什么？ 写代码：描述需求，直接生成可运行的代码 调 Bug：贴错误信息，自动定位并修复 解释代码：看不懂的代码，让它讲清楚 Code Review：审查代码质量、安全隐患、性能问题 重构：优化代码结构，不改功能  支持的语言Python ✅ JavaScript ✅ TypeScript ✅ Shell&#x2F;Bash ✅ HTML&#x2F;CSS ✅ SQL ✅ 怎么用？写代码123&quot;写一个 Python 函数，输入 CSV 路径，返回每列的统计摘要&quot;&quot;用 JavaScript 写一个防抖函数&quot;&quot;写一个 Shell 脚本批量重命名 .jpeg 为 .jpg&quot;  调 Bug12&quot;这段代码报错了：[粘贴错误信息]，帮我看看&quot;&quot;这个函数返回的结果不对，预期是 X 但实际是 Y&quot;  Code Review1234&quot;Review...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/29/ai-skill-library-overview/" title="AI智能体技能库 - 20个让AI真正干活的能力">AI智能体技能库 - 20个让AI真正干活的能力</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-29T03:10:00.000Z" title="发表于 2026-03-29 11:10:00">2026-03-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/AI-%E5%BC%80%E5%8F%91/">AI 开发</a></span></div><div class="content">AI智能体技能库：20个让AI真正干活的能力 不是ChatBot那种”你问我答”，是真正能帮你干活的AI Agent。  什么是”技能”？在OpenClaw生态中，技能（Skill）是一个自包含的能力单元。每个技能包含：  SKILL.md — 知识文档，告诉AI怎么做这件事 工具脚本 — 实际执行的Python&#x2F;Shell代码 使用规范 — 输入输出格式、异常处理、最佳实践  AI在需要某个能力时，自动加载对应的技能文档，然后按文档中的规范执行。你不需要记命令，只需要用人话说你要什么。 技能总览开发工具类   技能 功能 一句话描述    代码助手 写代码、调试、审查 你说需求，它写代码   GitHub操作 Issue&#x2F;PR&#x2F;CI管理 用自然语言操作GitHub   终端执行器 安全的命令执行 带权限控制的命令行   API测试器 HTTP接口调试 你的本地Postman   数据处理类   技能 功能 一句话描述    数据分析 CSV&#x2F;JSON分析 丢数据进去，拿洞察出来   数据库分析 SQL查询与统计 直连数据库，自然语言查数据...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/28/regex-cheatsheet/" title="正则表达式速查：10 个最常用的模式">正则表达式速查：10 个最常用的模式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-28T12:30:00.000Z" title="发表于 2026-03-28 20:30:00">2026-03-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧</a></span></div><div class="content">正则表达式速查：10 个最常用的模式正则不需要精通，记住 10 个常用模式就够日常用了。 基础语法速查12345678910111213.       任意字符\d      数字 [0-9]\w      字母数字下划线 [a-zA-Z0-9_]\s      空白字符*       0 次或多次+       1 次或多次?       0 次或 1 次&#123;n,m&#125;   n 到 m 次^       开头$       结尾[]      字符集合|       或()      分组捕获  10 个常用模式1. 手机号（中国大陆）1^1[3-9]\d&#123;9&#125;$ 12import rere.match(r&#x27;^1[3-9]\d&#123;9&#125;$&#x27;, &#x27;13812345678&#x27;)  # ✅  2. 邮箱1^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;$ 1re.match(r&#x27;^[\w.+-]+@[\w-]+\.[\w...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/28/ai-coding-guide/" title="如何用 AI 写代码：不是替代你，是加速你">如何用 AI 写代码：不是替代你，是加速你</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-28T12:29:00.000Z" title="发表于 2026-03-28 20:29:00">2026-03-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/AI-%E5%BC%80%E5%8F%91/">AI 开发</a></span></div><div class="content">如何用 AI 写代码：不是替代你，是加速你AI 写代码的能力越来越强，但大多数人的用法是错的。 常见误区❌ 把 AI 当搜索引擎用  “帮我写一个完整的电商平台”→ 生成 2000 行代码，你根本看不懂，也不敢用  ❌ 完全不审核就复制粘贴  → 代码能跑，但有安全隐患、性能问题、风格不一致  ❌ 用它做它不擅长的事  → “帮我判断这个 UI 设计好不好看” — AI 没有审美  正确用法1. 让 AI 写样板代码123你：写一个 Express.js 的用户 CRUD 接口，用 MongoDBAI：（生成 router 文件，包含增删改查）你：（检查 + 修改 + 集成到项目）  省时间：40 分钟 → 5 分钟 2. 让 AI 解释你不理解的代码12你：解释这段代码在做什么（贴代码）AI：逐行解释 + 标注关键点  3. 让 AI 写测试12你：为这个函数写单元测试（贴函数）AI：生成测试用例，包含边界条件  4. 让 AI 帮你调试12你：这段代码报了 XXX 错误（贴代码 + 错误信息）AI：分析原因 + 给出修复方案  提示词技巧好的提示词12345用 Python ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/28/rest-api-design/" title="REST API 设计规范：6 个让接口好用的原则">REST API 设计规范：6 个让接口好用的原则</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-28T12:28:00.000Z" title="发表于 2026-03-28 20:28:00">2026-03-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧</a></span></div><div class="content">REST API 设计规范：6 个让接口好用的原则你的 API 是给前端同事用的，不是给你自己用的。设计得好，前端少写 bug，后端少接电话。 1. URL 用名词，用 HTTP 方法表示操作❌ 反面教材： 1234GET  /getUserPOST /createUserPOST /deleteUserGET  /updateUser  ✅ 正确写法： 12345GET    /users         # 获取列表GET    /users/42      # 获取单个POST   /users         # 创建PUT    /users/42      # 更新DELETE /users/42      # 删除  2. 版本放在 URL 里12/v1/users/v2/users  比 Header 版本控制更直观，出问题好排查。 3. 统一响应格式12345678910111213// 成功&#123;  &quot;code&quot;: 0,  &quot;data&quot;: &#123; &quot;id&quot;: 1, &quot;name&q...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/28/github-actions-guide/" title="为什么你应该用 GitHub Actions 做 CI/CD">为什么你应该用 GitHub Actions 做 CI/CD</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-28T12:27:00.000Z" title="发表于 2026-03-28 20:27:00">2026-03-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/">工具推荐</a></span></div><div class="content">为什么你应该用 GitHub Actions 做 CI&#x2F;CDJenkins 太重，GitLab CI 需要自建，Travis CI 免费额度少。GitHub Actions 免费、开箱即用。 什么是 CI&#x2F;CD12CI（持续集成）= 每次提交代码，自动测试CD（持续部署）= 测试通过，自动发布  简单说：推代码 → 自动测试 → 自动部署。你不用手动操作。 GitHub Actions 免费额度   资源 免费额度    公开仓库 无限   私有仓库 2000 分钟&#x2F;月   存储 500 MB   个人项目完全够用。 最简示例创建 .github/workflows/hello.yml： 12345678910111213141516name: Hello CIon:  push:    branches: [main]jobs:  test:    runs-on: ubuntu-latest    steps:      - uses: actions/checkout@v4      - uses: actions/setup-node@v4 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/my-blog/2026/03/28/docker-quick-start/" title="Docker 入门：3 条命令搞定本地开发环境">Docker 入门：3 条命令搞定本地开发环境</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-28T12:26:00.000Z" title="发表于 2026-03-28 20:26:00">2026-03-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/my-blog/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></span></div><div class="content">Docker 入门：3 条命令搞定本地开发环境“我电脑上跑得好好的啊？” —— 每个开发者都说过这句话。Docker 就是解决这个问题的。 核心概念123镜像（Image）= 软件安装包容器（Container）= 运行中的软件实例Dockerfile = 安装说明书  3 条核心命令1. 拉取镜像123docker pull python:3.12docker pull node:22docker pull postgres:16  2. 运行容器12345678# 启动一个 Python 环境docker run -it python:3.12 python# 启动 PostgreSQL 数据库docker run -d --name mydb \  -e POSTGRES_PASSWORD=123456 \  -p 5432:5432 \  postgres:16  3. 管理容器1234docker ps          # 查看运行中的容器docker stop mydb   # 停止docker rm mydb     # 删除docker logs mydb   ...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/my-blog/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/my-blog/">1</a><a class="page-number" href="/my-blog/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/my-blog/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/my-blog/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/my-blog/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/my-blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">diodeshing</div><div class="author-info-description">一名开发者的个人技术博客，分享 AI、编程与开源工具的实践经验。</div><div class="site-data"><a href="/my-blog/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/my-blog/tags/"><div class="headline">标签</div><div class="length-num">69</div></a><a href="/my-blog/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/daily-2026-03-29/" title="每日总结 2026-03-29 | ARIS科研 + 论文完成">每日总结 2026-03-29 | ARIS科研 + 论文完成</a><time datetime="2026-03-29T12:20:00.000Z" title="发表于 2026-03-29 20:20:00">2026-03-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/skill-test-report-2026-03-29/" title="18个AI技能全测试 - 本地Ollama模型实测报告">18个AI技能全测试 - 本地Ollama模型实测报告</a><time datetime="2026-03-29T04:50:00.000Z" title="发表于 2026-03-29 12:50:00">2026-03-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/skill-blog-post/" title="AI技能附录 - 写博客发布 - 从想法到上线的最短路径">AI技能附录 - 写博客发布 - 从想法到上线的最短路径</a><time datetime="2026-03-29T03:35:00.000Z" title="发表于 2026-03-29 11:35:00">2026-03-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/skill-openclaw-mastery/" title="AI技能 #20 - OpenClaw掌握 - 了解AI智能体的一切">AI技能 #20 - OpenClaw掌握 - 了解AI智能体的一切</a><time datetime="2026-03-29T03:34:00.000Z" title="发表于 2026-03-29 11:34:00">2026-03-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/my-blog/2026/03/29/skill-file-manager/" title="AI 技能 #19：文件管理 — 智能整理你的文件">AI 技能 #19：文件管理 — 智能整理你的文件</a><time datetime="2026-03-29T03:33:00.000Z" title="发表于 2026-03-29 11:33:00">2026-03-29</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/my-blog/categories/AI-%E5%BC%80%E5%8F%91/"><span class="card-category-list-name">AI 开发</span><span class="card-category-list-count">24</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/my-blog/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/"><span class="card-category-list-name">工具推荐</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/my-blog/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"><span class="card-category-list-name">技术分享</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/my-blog/categories/%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93/"><span class="card-category-list-name">每日总结</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/my-blog/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/"><span class="card-category-list-name">编程技巧</span><span class="card-category-list-count">4</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/my-blog/tags/Notion/" style="font-size: 1.1em; color: #999">Notion</a> <a href="/my-blog/tags/DevOps/" style="font-size: 1.1em; color: #999">DevOps</a> <a href="/my-blog/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 1.1em; color: #999">数据分析</a> <a href="/my-blog/tags/SQL/" style="font-size: 1.1em; color: #999">SQL</a> <a href="/my-blog/tags/Agent/" style="font-size: 1.1em; color: #999">Agent</a> <a href="/my-blog/tags/%E7%A0%94%E7%A9%B6/" style="font-size: 1.1em; color: #999">研究</a> <a href="/my-blog/tags/%E6%97%A5%E6%8A%A5/" style="font-size: 1.1em; color: #999">日报</a> <a href="/my-blog/tags/REST/" style="font-size: 1.1em; color: #999">REST</a> <a href="/my-blog/tags/%E6%95%88%E7%8E%87/" style="font-size: 1.4em; color: #99a5b6">效率</a> <a href="/my-blog/tags/Python/" style="font-size: 1.2em; color: #999da3">Python</a> <a href="/my-blog/tags/Whisper/" style="font-size: 1.1em; color: #999">Whisper</a> <a href="/my-blog/tags/ARIS/" style="font-size: 1.1em; color: #999">ARIS</a> <a href="/my-blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 1.1em; color: #999">正则表达式</a> <a href="/my-blog/tags/Markdown/" style="font-size: 1.1em; color: #999">Markdown</a> <a href="/my-blog/tags/%E5%A4%8D%E7%9B%98/" style="font-size: 1.2em; color: #999da3">复盘</a> <a href="/my-blog/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">文件管理</a> <a href="/my-blog/tags/%E5%B9%B3%E5%8F%B0/" style="font-size: 1.1em; color: #999">平台</a> <a href="/my-blog/tags/CI-CD/" style="font-size: 1.1em; color: #999">CI/CD</a> <a href="/my-blog/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.2em; color: #999da3">博客</a> <a href="/my-blog/tags/%E9%80%9A%E7%9F%A5/" style="font-size: 1.1em; color: #999">通知</a> <a href="/my-blog/tags/%E5%86%99%E4%BD%9C/" style="font-size: 1.2em; color: #999da3">写作</a> <a href="/my-blog/tags/%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" style="font-size: 1.1em; color: #999">文字识别</a> <a href="/my-blog/tags/OCR/" style="font-size: 1.1em; color: #999">OCR</a> <a href="/my-blog/tags/%E7%88%AC%E8%99%AB/" style="font-size: 1.1em; color: #999">爬虫</a> <a href="/my-blog/tags/HTTP/" style="font-size: 1.1em; color: #999">HTTP</a> <a href="/my-blog/tags/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" style="font-size: 1.1em; color: #999">语音识别</a> <a href="/my-blog/tags/OpenClaw/" style="font-size: 1.3em; color: #99a1ac">OpenClaw</a> <a href="/my-blog/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 1.2em; color: #999da3">编程</a> <a href="/my-blog/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: #999">工具</a> <a href="/my-blog/tags/%E8%B0%83%E8%AF%95/" style="font-size: 1.1em; color: #999">调试</a> <a href="/my-blog/tags/%E8%AE%BA%E6%96%87/" style="font-size: 1.1em; color: #999">论文</a> <a href="/my-blog/tags/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/" style="font-size: 1.1em; color: #999">文本处理</a> <a href="/my-blog/tags/AI/" style="font-size: 1.5em; color: #99a9bf">AI</a> <a href="/my-blog/tags/%E8%B6%8B%E5%8A%BF/" style="font-size: 1.1em; color: #999">趋势</a> <a href="/my-blog/tags/Obsidian/" style="font-size: 1.1em; color: #999">Obsidian</a> <a href="/my-blog/tags/%E7%BD%91%E9%A1%B5%E6%8A%93%E5%8F%96/" style="font-size: 1.1em; color: #999">网页抓取</a> <a href="/my-blog/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/" style="font-size: 1.1em; color: #999">职业发展</a> <a href="/my-blog/tags/GitHub/" style="font-size: 1.1em; color: #999">GitHub</a> <a href="/my-blog/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 1.1em; color: #999">博客搭建</a> <a href="/my-blog/tags/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/" style="font-size: 1.1em; color: #999">多智能体</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/my-blog/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">37</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">37</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-03-29T12:40:02.905Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By diodeshing</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/my-blog/js/utils.js?v=5.5.4"></script><script src="/my-blog/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
