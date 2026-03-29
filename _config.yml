@@ -97,4 +97,4 @@ social:
 deploy:
   type: git
   repo: https://github.com/diodeshing/my-blog.git
-  branch: main
+  branch: gh-pages
