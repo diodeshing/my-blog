@@ -88,9 +88,21 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: butterfly
 
+# Search plugin
+search:
+  path: search.xml
+  field: post
+  content: true
+
 # Social links（显示在侧边栏和页脚）
 social:
   fab fa-github: https://github.com/diodeshing || GitHub
+
+# Algolia Search (required by theme, even if not used)
+algolia:
+  appId:
+  apiKey:
+  indexName:
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
