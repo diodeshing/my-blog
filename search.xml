@@ -1,0 +1,2656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>AI 智能体帮我配好了整个开发环境</title>
+    <url>/my-blog/2026/03/28/ai-agent-dev-env/</url>
+    <content><![CDATA[AI 智能体帮我配好了整个开发环境今天做了一个实验：完全不自己动手，让 AI 智能体帮我搭建开发环境。
+结果是：一个小时之内，我从一台全新的电脑，变成了一个拥有完整开发环境、GitHub 工具链、飞书集成、甚至还有一个上线博客的开发者。
+传统配环境有多痛苦每个开发者都经历过这样的场景：
+
+装 Node.js，版本不对，卸了重装
+配 Git，SSH key 生成了但不知道放哪
+装 VS Code 插件，装了一半忘了装了哪些
+配置 SSH、代理、环境变量，搞了一下午
+最后发现某个工具漏装了，又从头排查
+
+整个过程充满了重复劳动和上下文切换。而这恰好是 AI 最擅长的事。
+AI 智能体做了什么这次我用的是 OpenClaw（一个 AI 智能体框架），让它接管了所有配置工作。
+1. 安装工具链用户：&quot;帮我安装 GitHub CLI&quot;AI：  自动执行 winget install → 验证版本 → 配置认证 → 测试连接
+
+不需要我查命令，不需要我记参数，AI 直接搞定。
+2. 搭建博客用户：&quot;帮我建一个博客&quot;AI：  搜索框架 → 对比选型 → 创建项目 → 写配置 → 写文章 → 配置自动部署
+
+从零到上线，全自动。甚至还帮我写了第一篇博文。
+3. 学习与沉淀用户：&quot;帮我学习 OpenClaw 的所有功能&quot;AI：  阅读文档（200+ 页面）→ 提取核心知识 → 保存为技能文件
+
+以后再遇到相关问题，AI 可以直接读取这些知识，不用重新搜索。
+核心原理：技能沉淀AI 智能体有个关键设计：每次完成任务后，把操作步骤保存为”技能”。
+skills/├── blog-builder/     ← 建博客的完整流程├── blog-post/        ← 写文章发布流程├── code-helper/      ← 代码辅助├── file-manager/     ← 文件管理└── github/           ← GitHub 操作
+
+这意味着：
+
+第一次做：AI 需要搜索、尝试、调试
+第二次做：AI 直接读技能文件，秒级完成
+知识不会丢失：换一个 AI 模型也能用同样的技能
+
+实际效果一个小时的配置成果：
+
+
+
+工具&#x2F;服务
+状态
+
+
+
+GitHub CLI + 认证
+✅ 已就绪
+
+
+飞书集成
+✅ 已连接
+
+
+Hexo 博客
+✅ 已部署
+
+
+GitHub Actions CI&#x2F;CD
+✅ 自动运行
+
+
+10+ 个自定义技能
+✅ 已保存
+
+
+一些思考AI 擅长的事
+执行重复性操作（安装、配置、部署）
+记忆和组织大量信息
+按流程一步步执行复杂任务
+
+AI 不擅长的事
+做审美判断（这个配色好不好看）
+理解模糊需求（”帮我弄好看点”）
+创意性工作（需要你给方向）
+
+最佳协作模式人类：定方向、做决策、提需求AI：  执行、搜索、配置、记录
+
+总结
+最好的工具不是替代你，而是让你把时间花在真正需要创造力的地方。
+
+AI 智能体帮我做了所有我不想做的琐事。它不累，不会忘记步骤，而且每次学习后都会变得更强。
+如果你也想试试，可以从 OpenClaw 开始。
+
+本文由 AI 智能体协作完成，从写作到部署全程自动化。如果觉得有用，欢迎 Star 我的 GitHub。
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>开发环境</tag>
+        <tag>智能体</tag>
+        <tag>效率</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何用 AI 写代码：不是替代你，是加速你</title>
+    <url>/my-blog/2026/03/28/ai-coding-guide/</url>
+    <content><![CDATA[如何用 AI 写代码：不是替代你，是加速你AI 写代码的能力越来越强，但大多数人的用法是错的。
+常见误区❌ 把 AI 当搜索引擎用
+
+“帮我写一个完整的电商平台”→ 生成 2000 行代码，你根本看不懂，也不敢用
+
+❌ 完全不审核就复制粘贴
+
+→ 代码能跑，但有安全隐患、性能问题、风格不一致
+
+❌ 用它做它不擅长的事
+
+→ “帮我判断这个 UI 设计好不好看” — AI 没有审美
+
+正确用法1. 让 AI 写样板代码你：写一个 Express.js 的用户 CRUD 接口，用 MongoDBAI：（生成 router 文件，包含增删改查）你：（检查 + 修改 + 集成到项目）
+
+省时间：40 分钟 → 5 分钟
+2. 让 AI 解释你不理解的代码你：解释这段代码在做什么（贴代码）AI：逐行解释 + 标注关键点
+
+3. 让 AI 写测试你：为这个函数写单元测试（贴函数）AI：生成测试用例，包含边界条件
+
+4. 让 AI 帮你调试你：这段代码报了 XXX 错误（贴代码 + 错误信息）AI：分析原因 + 给出修复方案
+
+提示词技巧好的提示词用 Python 写一个函数，要求：- 输入：文件路径列表- 功能：并行读取所有文件内容，返回字典 &#123;文件名: 内容&#125;- 使用 asyncio + aiofiles- 包含错误处理
+
+要点： 语言、输入输出、具体技术、边界条件
+差的提示词帮我写个读文件的程序
+
+→ AI 不知道用什么语言、什么方式、要处理什么边界情况。
+实际工作流1. 你设计架构（AI 不擅长这个）2. 你拆分任务（每个函数做什么）3. AI 生成每个函数的代码4. 你审查、修改、整合5. AI 写测试6. 你运行测试，修复问题
+
+AI 负责手，你负责脑。
+工具推荐
+
+
+工具
+特点
+适合场景
+
+
+
+GitHub Copilot
+IDE 内联补全
+写代码时实时建议
+
+
+Claude
+长上下文、理解力强
+解释复杂代码、重构
+
+
+ChatGPT
+通用、生态广
+快速原型、学习新概念
+
+
+Cursor
+IDE 集成 AI
+全流程 AI 辅助编程
+
+
+总结
+AI 不会让不会写代码的人变成程序员，但会让会写代码的人效率翻倍。关键是你要做架构师，让 AI 做执行者。
+
+
+更多 AI 开发实践关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>效率</tag>
+        <tag>编程</tag>
+        <tag>Copilot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI智能体技能库 - 20个让AI真正干活的能力</title>
+    <url>/my-blog/2026/03/29/ai-skill-library-overview/</url>
+    <content><![CDATA[AI智能体技能库：20个让AI真正干活的能力
+不是ChatBot那种”你问我答”，是真正能帮你干活的AI Agent。
+
+什么是”技能”？在OpenClaw生态中，技能（Skill）是一个自包含的能力单元。每个技能包含：
+
+SKILL.md — 知识文档，告诉AI怎么做这件事
+工具脚本 — 实际执行的Python&#x2F;Shell代码
+使用规范 — 输入输出格式、异常处理、最佳实践
+
+AI在需要某个能力时，自动加载对应的技能文档，然后按文档中的规范执行。你不需要记命令，只需要用人话说你要什么。
+技能总览开发工具类
+
+
+技能
+功能
+一句话描述
+
+
+
+代码助手
+写代码、调试、审查
+你说需求，它写代码
+
+
+GitHub操作
+Issue&#x2F;PR&#x2F;CI管理
+用自然语言操作GitHub
+
+
+终端执行器
+安全的命令执行
+带权限控制的命令行
+
+
+API测试器
+HTTP接口调试
+你的本地Postman
+
+
+数据处理类
+
+
+技能
+功能
+一句话描述
+
+
+
+数据分析
+CSV&#x2F;JSON分析
+丢数据进去，拿洞察出来
+
+
+数据库分析
+SQL查询与统计
+直连数据库，自然语言查数据
+
+
+PDF和OCR
+PDF解析 + 文字识别
+读PDF、OCR扫描件
+
+
+Whisper语音转文字
+本地语音识别
+音频扔进去，文字出来
+
+
+网络与信息类
+
+
+技能
+功能
+一句话描述
+
+
+
+网页抓取
+深度爬取网页
+抓文章、读文档、提取代码
+
+
+网络研究
+搜索 + 对比分析
+给你写研究报告
+
+
+天气查询
+天气预报
+问天气，秒回
+
+
+内容创作类
+
+
+技能
+功能
+一句话描述
+
+
+
+博客搭建
+从零建站
+一条龙搭建Hexo博客
+
+
+博客操作
+写文章、部署
+发布你的想法
+
+
+写博客发布
+写作全流程
+想法 → 文章 → 上线
+
+
+每日总结
+日报&#x2F;复盘
+自动整理你今天干了啥
+
+
+文本处理
+翻译&#x2F;总结&#x2F;改写
+文本瑞士军刀
+
+
+集成与自动化类
+
+
+技能
+功能
+一句话描述
+
+
+
+通知推送
+邮件&#x2F;Webhook&#x2F;推送
+自动化消息推送
+
+
+第二大脑
+Notion + Obsidian
+知识库联动
+
+
+多智能体协作
+多Agent团队
+复杂任务分派给多个AI
+
+
+文件管理
+文件整理&#x2F;清理
+磁盘空间管理
+
+
+OpenClaw掌握
+平台全模块
+了解OpenClaw的一切
+
+
+怎么用？应用模式（日常使用）直接说人话：
+&quot;帮我分析这个CSV文件&quot;&quot;转录这个音频&quot;&quot;查一下 localhost:3000/api/users 接口返回什么&quot;&quot;把今天的总结写成博客发出去&quot;
+
+AI会自动匹配技能、加载文档、执行任务。
+学习模式（深入了解）说”学习”触发：
+&quot;学习一下Whisper是怎么工作的&quot;&quot;分析一下这个技能的实现原理&quot;&quot;阅读这个源码&quot;
+
+会获得深度技术解析，不限Token。
+下一步点击上方表格中的任意技能链接，查看详细教程。每个技能页面都包含：
+
+技能定位与适用场景
+安装与配置指南
+实际使用示例
+常见问题与排错
+测试口令
+
+
+本系列由AI智能体自动生成，技能库持续扩展中。
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>智能体</tag>
+        <tag>AI技能</tag>
+        <tag>OpenClaw</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2026 年最值得学的 5 个编程语言</title>
+    <url>/my-blog/2026/03/28/best-programming-languages-2026/</url>
+    <content><![CDATA[2026 年最值得学的 5 个编程语言学哪个语言不会后悔？不是最流行的，而是趋势向上且解决实际问题的。
+1. Python — 依然统治 AI&#x2F;数据领域# 2026 年 Python 的核心场景# - AI/ML（PyTorch, TensorFlow, LangChain）# - 数据分析（Pandas, Polars）# - 自动化脚本# - Web 后端（FastAPI）from fastapi import FastAPIapp = FastAPI()@app.get(&quot;/&quot;)def home():    return &#123;&quot;status&quot;: &quot;running&quot;&#125;
+
+适合： 所有开发者。入门门槛低，AI 时代必备。
+2. TypeScript — Web 开发的现在和未来// 2026 年前端/全栈的事实标准// - React/Vue/Svelte 全部原生支持// - 后端有 Deno, Bun, tRPCinterface User &#123;  name: string;  age: number;  role: &quot;admin&quot; | &quot;user&quot;;&#125;function greet(user: User): string &#123;  return `你好，$&#123;user.name&#125;`;&#125;
+
+适合： Web 开发者。不会 TS 基本等于不会写前端。
+3. Rust — 性能敏感场景的新选择// 系统编程、WebAssembly、CLI 工具// npm 的底层工具越来越多用 Rust 重写fn main() &#123;    let names = vec![&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;];    for name in names.iter() &#123;        println!(&quot;Hello, &#123;&#125;!&quot;, name);    &#125;&#125;
+
+适合： 想深入底层的开发者。学习曲线陡峭但回报高。
+4. Go — 云原生和后端的利器// Kubernetes、Docker、微服务全是 Go 写的// 并发模型简单优雅package mainimport &quot;fmt&quot;func main() &#123;    ch := make(chan string)    go func() &#123; ch &lt;- &quot;hello&quot; &#125;()    fmt.Println(&lt;-ch)&#125;
+
+适合： 后端&#x2F;DevOps 工程师。上手快，就业需求大。
+5. SQL — 被低估的”语言”-- 很多人觉得 SQL &quot;太简单&quot;不愿学-- 但 90% 的人都写不出复杂的窗口函数SELECT    department,    employee_name,    salary,    RANK() OVER (PARTITION BY department ORDER BY salary DESC) as rankFROM employeesWHERE hire_date &gt; &#x27;2025-01-01&#x27;
+
+适合： 所有开发者。不管你用什么语言，数据都在数据库里。
+选择建议
+
+
+你的方向
+首选
+次选
+
+
+
+AI&#x2F;数据
+Python
+SQL
+
+
+前端
+TypeScript
+—
+
+
+后端
+Go 或 Python
+TypeScript
+
+
+系统&#x2F;底层
+Rust
+Go
+
+
+全栈
+TypeScript + Python
+SQL
+
+
+总结
+不要学”最流行”的语言，要学”你所在领域最有用”的语言。 Python 和 SQL 是基础，其他根据方向选择。精通一个比浅尝五个强。
+
+
+更多技术趋势关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>编程语言</tag>
+        <tag>职业发展</tag>
+        <tag>趋势</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每日总结：2026-03-28 | 从零开始的一天</title>
+    <url>/my-blog/2026/03/28/daily-2026-03-28/</url>
+    <content><![CDATA[每日总结：2026-03-28 | 从零开始的一天
+今天是和 AI 智能体协作的第一天。从一个空白的工作区开始，到 15 个技能就绪、12 篇博客上线、邮件推送打通，记录这段从零到一的过程。
+
+
+📊 今日数据
+
+
+指标
+数值
+
+
+
+技能数量
+15 个
+
+
+博客文章
+12 篇
+
+
+工具安装
+GitHub CLI、sqlite-utils、notion-client
+
+
+渠道配置
+WebChat ✅、飞书 ✅、Email ✅
+
+
+部署状态
+GitHub Pages 自动部署 ✅
+
+
+
+🕐 时间线17:47 - 启动首次对话。配置了基本偏好：中文交流、ReAct 工作模式、任务沉淀为技能。
+17:48 - 安装技能尝试通过 ClawHub 安装 GitHub 技能，遇到 API 速率限制。
+18:13 - 建立工作流规范
+双模态协议：学习模式（不限 Token）vs 应用模式（极限节流）
+开源学习流程：GitHub 搜 Repo → 读代码 → 教用户
+保存 GitHub Token，配置 gh CLI
+
+18:24 - 深度学习 OpenClaw通过官方文档学习了 16 个核心模块：架构、安装、配置、渠道系统、模型提供商、Agent Runtime、会话管理、心跳机制、Cron 定时任务、Webhooks、Hooks、多智能体路由、安全模型、插件系统、记忆系统、远程访问。
+成果： skills/openclaw-mastery/SKILL.md（9KB）
+18:56 - 用强模型为本地模型创建技能用 mimo-v2-pro 创建了 5 个基础技能供本地 qwen3.5:9b 复用：
+
+代码助手
+文本处理
+数据分析
+文件管理
+网络研究
+
+19:12 - 搭建博客框架选型（Hexo + Butterfly）→ 项目初始化 → GitHub Actions CI&#x2F;CD → 部署上线。
+成果： https://diodeshing.github.io/my-blog/
+19:56 - 内容生产一口气写了 10 篇技术博客，涵盖 Python 技巧、终端美化、Markdown 速成、Git 规范、编程语言推荐、Docker 入门、GitHub Actions、API 设计、AI 写代码、正则表达式。
+20:15 - 博客更名从「极客代码花园」改为「击穿二极管」。
+20:56 - 深度网页抓取学习 Jina Reader API + Python httpx + BeautifulSoup，实现网页内容提取。
+21:04 - 第二大脑联动学习 Notion API + Obsidian 集成，安装 notion-client。
+21:09 - 数据库分析学习 SQLite&#x2F;MySQL&#x2F;PostgreSQL 直连，安装 sqlite-utils。
+21:16 - 自动化通知学习 Email (SMTP) + Telegram Bot + Webhook 推送，配置 QQ 邮箱并测试成功。
+21:31 - 写每日总结你正在读的这篇文章。
+
+🛠 今日创建的技能skills/├── SKILL-INDEX.md          ← 技能索引（路由表）├── openclaw-mastery/       ← OpenClaw 全面掌握（16 模块）├── code-helper/            ← 代码助手├── text-processor/         ← 文本处理├── data-analyzer/          ← 数据分析├── file-manager/           ← 文件管理├── web-researcher/         ← 网络研究├── blog-builder/           ← 博客搭建├── blog-post/              ← 博客写作与发布├── deep-web-scraper/       ← 深度网页抓取├── second-brain/           ← Notion + Obsidian 联动├── db-analyst/             ← 数据库分析├── auto-notify/            ← 自动化通知├── github/                 ← GitHub 操作├── weather/                ← 天气查询└── video-frames/           ← 视频帧提取
+
+
+💡 今日收获
+AI 不是替代者，是加速器 — 它负责执行，人类负责决策
+技能沉淀是关键 — 第一次做要花时间，第二次就是秒级
+强模型教弱模型 — 用大模型学技能，存成本地文件，小模型直接用
+自动化是终极效率 — Cron + 推送 + 博客 &#x3D; 无人值守内容流水线
+
+
+📅 明天计划
+ 配置 Telegram Bot 推送
+ 设置 Cron 每日新闻推送
+ 整理 Obsidian 笔记 → 博客文章
+ 探索更多 ClawHub 技能
+
+
+
+第一天就这样。从空白到满载，从手动到自动化。明天继续。
+
+
+更多每日总结关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>每日总结</category>
+      </categories>
+      <tags>
+        <tag>OpenClaw</tag>
+        <tag>每日总结</tag>
+        <tag>复盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每日总结 2026-03-29 | ARIS科研 + 论文完成</title>
+    <url>/my-blog/2026/03/29/daily-2026-03-29/</url>
+    <content><![CDATA[每日总结 2026-03-29 | ARIS科研 + 论文完成
+今天从清理技能开始，以两篇论文结束。高强度的一天。
+
+
+上午（10:00-12:00）：技能清理与配置完成事项
+❌ 删除了 Home Assistant 和日历集成技能
+✅ Tesseract OCR 安装配置完成（含中文语言包）
+✅ Whisper 语音转文字技能就绪（base模型已下载）
+✅ API 测试器技能创建完成
+✅ Ollama 本地模型配置（qwen3.5:4b）
+✅ 18个技能全部测试通过
+
+博客相关
+发布了22篇技能博客（AI技能专栏）
+修复了博客部署问题（branch: main → gh-pages）
+修复了YAML解析错误和内部链接问题
+
+下午（13:00-16:00）：ARIS科研系统部署ARIS是什么ARIS (Auto-Research-In-Sleep) 是一套AI自主科研方法论，从选题到投稿全流程自动化。
+部署完成
+✅ 克隆仓库到 D:\ARIS
+✅ 31个科研技能集成到OpenClaw
+✅ 知识胶囊保存到 skills&#x2F;ar-research-agent&#x2F;
+✅ 完整学习笔记
+
+下午（16:00-20:00）：DynamicYOLO项目选定方向从5个候选Idea中选定：Idea 2 - DynamicYOLO（动态推理目标检测）
+实验完成
+
+
+阶段
+结果
+
+
+
+Phase 0: 基线训练
+mAP50&#x3D;0.8577, 12.5ms, 80FPS
+
+
+Phase 1: 模型开发
+DynamicYOLO架构完成
+
+
+Phase 2: 真实数据训练
+3.7ms, 268FPS, 2.44x提速
+
+
+消融实验
+3种路由策略对比
+
+
+扩展实验
+批次&#x2F;分辨率&#x2F;逐层速度&#x2F;复杂度分析
+
+
+核心发现路由器学到的不是简单的物体计数，而是更高级的复杂度特征。Fast路径图像平均10.5个物体，Deep路径仅5.8个——反直觉但有道理。
+论文完成
+📄 英文论文：4页IEEE格式，39篇参考文献
+📄 中文论文：20,664字，45篇参考文献
+📊 13张专业图表
+📝 Word版本：1.9MB（含图表）
+
+今日数据
+
+
+指标
+数值
+
+
+
+新建技能
+3个（Whisper、API测试器、ARIS）
+
+
+删除技能
+2个（HomeAssistant、日历）
+
+
+博客文章
+22+1篇
+
+
+实验运行
+6组（基线&#x2F;训练&#x2F;评估&#x2F;消融&#x2F;扩展&#x2F;策略对比）
+
+
+论文
+2篇（英文4页+中文2万字）
+
+
+图表
+13张
+
+
+代码
+~20个脚本
+
+
+明日计划
+ 在完整COCO数据集上评估DynamicYOLO
+ 集成完整的YOLOv8检测损失
+ 导出ONNX模型
+ 考虑投稿目标会议
+
+
+今天是产出密度最高的一天。从清理到建设到研究到论文，一气呵成。
+]]></content>
+      <categories>
+        <category>每日总结</category>
+      </categories>
+      <tags>
+        <tag>OpenClaw</tag>
+        <tag>每日总结</tag>
+        <tag>复盘</tag>
+        <tag>ARIS</tag>
+        <tag>论文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker 入门：3 条命令搞定本地开发环境</title>
+    <url>/my-blog/2026/03/28/docker-quick-start/</url>
+    <content><![CDATA[Docker 入门：3 条命令搞定本地开发环境“我电脑上跑得好好的啊？” —— 每个开发者都说过这句话。Docker 就是解决这个问题的。
+核心概念镜像（Image）= 软件安装包容器（Container）= 运行中的软件实例Dockerfile = 安装说明书
+
+3 条核心命令1. 拉取镜像docker pull python:3.12docker pull node:22docker pull postgres:16
+
+2. 运行容器# 启动一个 Python 环境docker run -it python:3.12 python# 启动 PostgreSQL 数据库docker run -d --name mydb \  -e POSTGRES_PASSWORD=123456 \  -p 5432:5432 \  postgres:16
+
+3. 管理容器docker ps          # 查看运行中的容器docker stop mydb   # 停止docker rm mydb     # 删除docker logs mydb   # 查看日志
+
+实战：一键启动开发环境创建 docker-compose.yml：
+version: &quot;3.8&quot;services:  # 数据库  postgres:    image: postgres:16    environment:      POSTGRES_DB: myapp      POSTGRES_PASSWORD: dev123    ports:      - &quot;5432:5432&quot;  # 缓存  redis:    image: redis:7-alpine    ports:      - &quot;6379:6379&quot;  # 你的应用  app:    build: .    ports:      - &quot;3000:3000&quot;    depends_on:      - postgres      - redis    volumes:      - .:/app
+
+启动整个环境：
+docker compose up -d
+
+一行命令，数据库 + 缓存 + 应用全部启动。
+Dockerfile 示例FROM node:22-alpineWORKDIR /appCOPY package*.json ./RUN npm ciCOPY . .EXPOSE 3000CMD [&quot;node&quot;, &quot;server.js&quot;]
+
+常用技巧# 清理无用镜像（释放空间）docker system prune -a# 进入运行中的容器docker exec -it mydb bash# 查看容器资源占用docker stats
+
+总结
+Docker 解决的核心问题不是”容器化”，而是**”在我电脑上能跑”**。花 30 分钟学会 3 条命令，以后换电脑、换环境、换队友都不怕。
+
+
+更多 DevOps 技巧关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>开发环境</tag>
+        <tag>Docker</tag>
+        <tag>容器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 提交信息写法指南：告别 &#39;fix bug&#39; 和 &#39;update&#39;</title>
+    <url>/my-blog/2026/03/28/git-commit-guide/</url>
+    <content><![CDATA[Git 提交信息写法指南：告别 “fix bug” 和 “update”你的 Git 提交记录是不是这样的？
+fixupdate修改bug改了点东西
+
+看一眼就头疼。来学一套简单的规范。
+格式&lt;类型&gt;: &lt;简短描述&gt;&lt;可选的详细说明&gt;
+
+类型速查
+
+
+类型
+用途
+示例
+
+
+
+feat
+新功能
+feat: 添加用户登录功能
+
+
+fix
+修复 bug
+fix: 修复空指针异常
+
+
+docs
+文档更新
+docs: 更新 README 安装说明
+
+
+style
+格式调整（不影响逻辑）
+style: 统一缩进为 2 空格
+
+
+refactor
+重构（无功能变化）
+refactor: 拆分 utils 模块
+
+
+perf
+性能优化
+perf: 优化查询缓存逻辑
+
+
+test
+测试相关
+test: 添加登录接口单元测试
+
+
+chore
+构建&#x2F;工具变更
+chore: 升级 webpack 到 v5
+
+
+实例对比❌ 垃圾提交：
+git commit -m &quot;fix bug&quot;git commit -m &quot;修改代码&quot;git commit -m &quot;update&quot;
+
+✅ 清晰提交：
+git commit -m &quot;fix: 修复登录时密码未加密的问题&quot;git commit -m &quot;feat: 添加用户头像上传功能&quot;git commit -m &quot;refactor: 将数据库连接逻辑抽取为独立模块&quot;
+
+带详细说明git commit -m &quot;feat: 添加搜索功能- 支持关键词模糊搜索- 支持按分类筛选- 搜索结果分页展示Closes #42&quot;
+
+小技巧# 查看提交历史（简洁版）git log --oneline# 查看某文件的修改历史git log --oneline -- path/to/file.js# 撤销上一次提交（保留修改）git commit --amend
+
+团队协作如果项目没有规范，提一个 PR 引入 Conventional Commits。只需要 5 分钟培训，整个团队的代码历史就会变得清晰。
+总结
+提交信息不是写给自己的，是写给三个月后调试 bug 的你和协作的队友的。多写 5 个字，少查 30 分钟日志。
+
+
+更多编程规范关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>编程技巧</category>
+      </categories>
+      <tags>
+        <tag>效率</tag>
+        <tag>Git</tag>
+        <tag>规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么你应该用 GitHub Actions 做 CI/CD</title>
+    <url>/my-blog/2026/03/28/github-actions-guide/</url>
+    <content><![CDATA[为什么你应该用 GitHub Actions 做 CI&#x2F;CDJenkins 太重，GitLab CI 需要自建，Travis CI 免费额度少。GitHub Actions 免费、开箱即用。
+什么是 CI&#x2F;CDCI（持续集成）= 每次提交代码，自动测试CD（持续部署）= 测试通过，自动发布
+
+简单说：推代码 → 自动测试 → 自动部署。你不用手动操作。
+GitHub Actions 免费额度
+
+
+资源
+免费额度
+
+
+
+公开仓库
+无限
+
+
+私有仓库
+2000 分钟&#x2F;月
+
+
+存储
+500 MB
+
+
+个人项目完全够用。
+最简示例创建 .github/workflows/hello.yml：
+name: Hello CIon:  push:    branches: [main]jobs:  test:    runs-on: ubuntu-latest    steps:      - uses: actions/checkout@v4      - uses: actions/setup-node@v4        with:          node-version: 22      - run: npm ci      - run: npm test
+
+推送到 main 分支，GitHub 自动运行测试。
+实用场景1. 代码检查- name: Lint  run: npx eslint .
+
+2. 自动部署到服务器- name: Deploy  uses: appleboy/ssh-action@v1  with:    host: $&#123;&#123; secrets.SERVER_HOST &#125;&#125;    username: $&#123;&#123; secrets.SERVER_USER &#125;&#125;    key: $&#123;&#123; secrets.SSH_KEY &#125;&#125;    script: cd /app &amp;&amp; git pull &amp;&amp; npm install &amp;&amp; pm2 restart all
+
+3. 定时任务on:  schedule:    - cron: &#x27;0 9 * * 1&#x27;  # 每周一早上9点
+
+Secrets 管理敏感信息不要写在 YAML 里：
+
+仓库 → Settings → Secrets → Actions
+添加 DEPLOY_KEY、API_TOKEN 等
+代码里用 $&#123;&#123; secrets.DEPLOY_KEY &#125;&#125; 引用
+
+常用 Actions
+
+
+Action
+用途
+
+
+
+actions/checkout
+检出代码
+
+
+actions/setup-node
+安装 Node.js
+
+
+actions/setup-python
+安装 Python
+
+
+peaceiris/actions-gh-pages
+部署到 GitHub Pages
+
+
+docker/build-push-action
+构建并推送 Docker 镜像
+
+
+总结
+如果你的项目在 GitHub 上，就没有理由不用 GitHub Actions。免费、简单、和代码仓库在一起，不需要额外维护任何东西。
+
+
+更多自动化技巧关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>工具推荐</category>
+      </categories>
+      <tags>
+        <tag>GitHub Actions</tag>
+        <tag>CI/CD</tag>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World：我的 AI 助手帮我搭建了这个博客</title>
+    <url>/my-blog/2026/03/28/hello-world/</url>
+    <content><![CDATA[Hello World：我的 AI 助手帮我搭建了这个博客这是我写的第一篇博客。和大多数 “Hello World” 不同，这个博客本身就是一个 Hello World —— 整个搭建过程，从框架选型到自动部署，都是我和 AI 助手协作完成的。
+为什么要做这个博客我一直想有一个自己的技术博客，但每次都被以下问题劝退：
+
+选框架：Hexo、Hugo、VitePress、Jekyll……选择太多，反而不知道选哪个
+配环境：Node.js 版本、依赖冲突、主题配置……光环境就折腾半天
+部署：GitHub Pages、Vercel、Netlify……流程不熟悉
+
+这次我决定换个思路 —— 让 AI 来做。我只负责提需求，剩下的交给它。
+框架选型：为什么选 Hexo经过 AI 的分析，最终选择了 Hexo，原因很简单：
+
+
+
+对比项
+Hexo
+Hugo
+VitePress
+
+
+
+语言
+Node.js
+Go
+Vue&#x2F;Vite
+
+
+上手难度
+⭐ 低
+⭐⭐ 中
+⭐⭐ 中
+
+
+中文主题
+非常丰富
+较少
+少
+
+
+适合场景
+个人博客
+文档站
+技术文档
+
+
+Hexo 最大的优势是 中文生态好 —— Butterfly、NexT 等主题质量很高，社区活跃。
+搭建过程整个过程分四步，每步都由 AI 执行：
+1. 创建项目结构# AI 生成了完整的目录结构D:\MyBlog\├── _config.yml          # 主配置├── package.json         # 依赖管理├── source/_posts/       # 文章目录├── source/about/        # 关于页面└── scaffolds/           # 文章模板
+
+2. 配置主题选择了 Butterfly 主题 —— 响应式设计、支持暗色模式、功能丰富。
+3. 设置自动部署配置了 GitHub Actions，每次推送到 main 分支就自动构建部署：
+# .github/workflows/deploy.ymlon:  push:    branches: [main]jobs:  build-deploy:    runs-on: ubuntu-latest    steps:      - uses: actions/checkout@v4      - uses: actions/setup-node@v4      - run: npm ci      - run: npx hexo generate      - uses: peaceiris/actions-gh-pages@v4
+
+4. 测试与发布# 本地预览hexo server  # → http://localhost:4000# 推送部署git push origin main  # → GitHub Actions 自动构建
+
+写作体验用 Markdown 写博客非常舒服。只需要一个 .md 文件：
+---title: 我的文章date: 2026-03-28tags: [技术]---这里是正文，支持所有 Markdown 语法。
+
+未来计划这个博客打算持续更新以下内容：
+
+AI 开发实践：大语言模型应用、智能体开发
+编程技巧：前端、后端、工具链
+开源探索：好用的开源项目推荐
+效率工具：开发环境配置、生产力提升
+
+总结从零到上线，整个过程不到一小时。AI 不仅帮我做了技术决策，还帮我写了这篇文章。
+
+技术的进步不是让人类失业，而是让人类可以把时间花在更重要的事情上。
+
+这是第一篇，期待后面更多内容。🚀
+
+如果这篇文章对你有帮助，欢迎 Star 我的 GitHub。
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>Hexo</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown 速成：10 分钟掌握写作必备语法</title>
+    <url>/my-blog/2026/03/28/markdown-quick-start/</url>
+    <content><![CDATA[Markdown 速成：10 分钟掌握写作必备语法Markdown 是程序员的”写作语言”。学一次，写博客、文档、README 全都能用。
+标题# 一级标题## 二级标题### 三级标题
+
+文本样式**加粗***斜体*~~删除线~~`行内代码`&gt; 引用
+
+列表无序列表：- 第一项- 第二项有序列表：1. 第一步2. 第二步任务列表：- [x] 已完成- [ ] 待完成
+
+代码块```pythondef hello():    print(&quot;Hello World&quot;)```
+
+常用语言标记：python javascript bash json yaml
+链接和图片[链接文字](https://example.com)![图片描述](https://example.com/img.png)
+
+表格| 姓名 | 年龄 | 职业 ||------|------|------|| 张三 | 25   | 开发 || 李四 | 30   | 设计 |
+
+分割线---
+
+转义字符\* 不会变斜体\# 不会变标题
+
+快捷操作（VS Code）
+
+
+操作
+快捷键
+
+
+
+加粗
+Ctrl+B
+
+
+斜体
+Ctrl+I
+
+
+预览
+Ctrl+Shift+V
+
+
+常见坑
+换行：行尾加两个空格，或者空一行
+缩进：代码块内缩进用空格，不要用 Tab
+特殊字符：* # &gt; 等有特殊含义，需要时加 \ 转义
+
+总结
+Markdown 的精髓是”内容优先，格式其次”。你不需要记住所有语法，常用的就那 10 个，写多了自然就记住了。
+
+
+更多写作技巧关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>效率</tag>
+        <tag>Markdown</tag>
+        <tag>写作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>5 个让你少写 80% 代码的 Python 技巧</title>
+    <url>/my-blog/2026/03/28/python-tips/</url>
+    <content><![CDATA[5 个让你少写 80% 代码的 Python 技巧很多人写 Python 的方式还停留在”翻译 Java”的阶段。其实 Python 有很多语法糖，能让你的代码短一半还更清晰。
+1. 列表推导式❌ 笨拙写法：
+result = []for x in range(10):    if x % 2 == 0:        result.append(x ** 2)
+
+✅ 一行搞定：
+result = [x ** 2 for x in range(10) if x % 2 == 0]# [0, 4, 16, 36, 64]
+
+字典推导也一样：
+word_lengths = &#123;w: len(w) for w in [&quot;hello&quot;, &quot;world&quot;, &quot;python&quot;]&#125;# &#123;&#x27;hello&#x27;: 5, &#x27;world&#x27;: 5, &#x27;python&#x27;: 6&#125;
+
+2. with 语句（上下文管理器）❌ 忘记关文件：
+f = open(&quot;data.txt&quot;, &quot;r&quot;)data = f.read()f.close()  # 容易忘，异常时更危险
+
+✅ 自动管理：
+with open(&quot;data.txt&quot;, &quot;r&quot;) as f:    data = f.read()# 出了 with 块，文件自动关闭
+
+自定义上下文管理器：
+from contextlib import contextmanager@contextmanagerdef timer(label):    import time    start = time.time()    yield    print(f&quot;&#123;label&#125;: &#123;time.time() - start:.2f&#125;s&quot;)with timer(&quot;数据处理&quot;):    # 你的代码    pass
+
+3. 海象运算符 :=（Python 3.8+）避免重复计算同一表达式：
+❌ 重复调用：
+data = get_large_data()if len(data) &gt; 100:    print(f&quot;数据量: &#123;len(data)&#125;&quot;)
+
+✅ 只算一次：
+if (n := len(get_large_data())) &gt; 100:    print(f&quot;数据量: &#123;n&#125;&quot;)
+
+正则匹配场景特别好用：
+import reif (m := re.search(r&#x27;\d+&#x27;, text)):    print(f&quot;找到数字: &#123;m.group()&#125;&quot;)
+
+4. 解包赋值# 交换变量a, b = b, a# 忽略不需要的值first, *rest = [1, 2, 3, 4, 5]# first=1, rest=[2,3,4,5]# 函数返回多值def get_user():    return &quot;张三&quot;, 25, &quot;dev&quot;name, age, role = get_user()
+
+5. f-string 的隐藏能力name = &quot;Python&quot;print(f&quot;&#123;name:=^30&#125;&quot;)  # =========Python==========# 调试神器（Python 3.8+）x = 42print(f&quot;&#123;x = &#125;&quot;)        # x = 42print(f&quot;&#123;x + 1 = &#125;&quot;)    # x + 1 = 43# 格式化数字price = 1234567.89print(f&quot;¥&#123;price:,.2f&#125;&quot;)  # ¥1,234,567.89
+
+总结
+
+
+技巧
+替代
+省代码量
+
+
+
+列表推导
+for + append
+60%
+
+
+with 语句
+try&#x2F;finally
+40%
+
+
+海象运算符
+重复表达式
+30%
+
+
+解包赋值
+逐个赋值
+50%
+
+
+f-string
+format()
+30%
+
+
+
+好代码不是写得少，是用最少的字表达最清晰的意思。Python 的语法糖不是为了炫技，而是为了让意图更明确。
+
+
+更多 Python 技巧关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>编程技巧</category>
+      </categories>
+      <tags>
+        <tag>效率</tag>
+        <tag>Python</tag>
+        <tag>编程技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式速查：10 个最常用的模式</title>
+    <url>/my-blog/2026/03/28/regex-cheatsheet/</url>
+    <content><![CDATA[正则表达式速查：10 个最常用的模式正则不需要精通，记住 10 个常用模式就够日常用了。
+基础语法速查.       任意字符\d      数字 [0-9]\w      字母数字下划线 [a-zA-Z0-9_]\s      空白字符*       0 次或多次+       1 次或多次?       0 次或 1 次&#123;n,m&#125;   n 到 m 次^       开头$       结尾[]      字符集合|       或()      分组捕获
+
+10 个常用模式1. 手机号（中国大陆）^1[3-9]\d&#123;9&#125;$
+import rere.match(r&#x27;^1[3-9]\d&#123;9&#125;$&#x27;, &#x27;13812345678&#x27;)  # ✅
+
+2. 邮箱^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;$
+re.match(r&#x27;^[\w.+-]+@[\w-]+\.[\w.]+$&#x27;, &#x27;user@example.com&#x27;)  # ✅
+
+3. IP 地址^(\d&#123;1,3&#125;\.)&#123;3&#125;\d&#123;1,3&#125;$
+
+4. URL^https?://[^\s/$.?#].[^\s]*$
+
+5. 日期（YYYY-MM-DD）^\d&#123;4&#125;-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$
+
+6. 中文字符[\u4e00-\u9fa5]+
+re.findall(r&#x27;[\u4e00-\u9fa5]+&#x27;, &#x27;Hello你好World世界&#x27;)# [&#x27;你好&#x27;, &#x27;世界&#x27;]
+
+7. 提取数字\d+\.?\d*
+re.findall(r&#x27;\d+\.?\d*&#x27;, &#x27;价格 ¥199.9 库存 42&#x27;)# [&#x27;199.9&#x27;, &#x27;42&#x27;]
+
+8. 密码强度（至少 8 位，包含大小写和数字）^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).&#123;8,&#125;$
+
+9. 去除首尾空白^\s+|\s+$
+re.sub(r&#x27;^\s+|\s+$&#x27;, &#x27;&#x27;, &#x27;  hello  &#x27;)  # &#x27;hello&#x27;
+
+10. 提取 HTML 标签内容&lt;(\w+)[^&gt;]*&gt;(.*?)&lt;/\1&gt;
+
+Python 实用函数import redef match_phone(text):    &quot;&quot;&quot;提取文本中的手机号&quot;&quot;&quot;    return re.findall(r&#x27;1[3-9]\d&#123;9&#125;&#x27;, text)def match_email(text):    &quot;&quot;&quot;提取文本中的邮箱&quot;&quot;&quot;    return re.findall(r&#x27;[\w.+-]+@[\w-]+\.[\w.]+&#x27;, text)def replace_blank(text):    &quot;&quot;&quot;多个空格替换为一个&quot;&quot;&quot;    return re.sub(r&#x27;\s+&#x27;, &#x27; &#x27;, text).strip()# 使用text = &quot;联系人：张三 13812345678 zhang@example.com&quot;print(match_phone(text))  # [&#x27;13812345678&#x27;]print(match_email(text))  # [&#x27;zhang@example.com&#x27;]
+
+在线测试工具
+regex101.com — 最好用的在线正则测试
+regexr.com — 可视化解释
+
+总结
+正则表达式是”写一次，查一辈子”的东西。不需要记住所有规则，只需要收藏这篇，用到时 Ctrl+F 查一下。
+
+
+更多编程速查关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>编程技巧</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>正则表达式</tag>
+        <tag>速查</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>REST API 设计规范：6 个让接口好用的原则</title>
+    <url>/my-blog/2026/03/28/rest-api-design/</url>
+    <content><![CDATA[REST API 设计规范：6 个让接口好用的原则你的 API 是给前端同事用的，不是给你自己用的。设计得好，前端少写 bug，后端少接电话。
+1. URL 用名词，用 HTTP 方法表示操作❌ 反面教材：
+GET  /getUserPOST /createUserPOST /deleteUserGET  /updateUser
+
+✅ 正确写法：
+GET    /users         # 获取列表GET    /users/42      # 获取单个POST   /users         # 创建PUT    /users/42      # 更新DELETE /users/42      # 删除
+
+2. 版本放在 URL 里/v1/users/v2/users
+
+比 Header 版本控制更直观，出问题好排查。
+3. 统一响应格式// 成功&#123;  &quot;code&quot;: 0,  &quot;data&quot;: &#123; &quot;id&quot;: 1, &quot;name&quot;: &quot;张三&quot; &#125;,  &quot;message&quot;: &quot;success&quot;&#125;// 失败&#123;  &quot;code&quot;: 40001,  &quot;data&quot;: null,  &quot;message&quot;: &quot;用户名已存在&quot;&#125;
+
+原则： 结构永远一致，前端不用猜。
+4. 分页和过滤GET /users?page=2&amp;size=20&amp;sort=-created_at&amp;status=active
+
+&#123;  &quot;data&quot;: [...],  &quot;pagination&quot;: &#123;    &quot;page&quot;: 2,    &quot;size&quot;: 20,    &quot;total&quot;: 156,    &quot;pages&quot;: 8  &#125;&#125;
+
+5. 错误处理要具体❌ 模糊错误：
+&#123; &quot;code&quot;: 500, &quot;message&quot;: &quot;Internal Server Error&quot; &#125;
+
+✅ 具体错误：
+&#123;  &quot;code&quot;: 40001,  &quot;message&quot;: &quot;用户名已被注册&quot;,  &quot;field&quot;: &quot;username&quot;,  &quot;suggestion&quot;: &quot;请尝试其他用户名&quot;&#125;
+
+6. 用状态码表达结果
+
+
+状态码
+含义
+
+
+
+200
+成功
+
+
+201
+创建成功
+
+
+400
+参数错误
+
+
+401
+未认证
+
+
+403
+无权限
+
+
+404
+资源不存在
+
+
+422
+业务错误
+
+
+429
+请求太频繁
+
+
+500
+服务器错误
+
+
+快速模板// Express.js 示例app.get(&#x27;/api/v1/users&#x27;, async (req, res) =&gt; &#123;  const &#123; page = 1, size = 20 &#125; = req.query;  const users = await User.find()    .skip((page - 1) * size)    .limit(size);  res.json(&#123;    code: 0,    data: users,    message: &quot;success&quot;  &#125;);&#125;);
+
+总结
+好的 API 设计就一句话：前端拿到响应就知道该怎么做，不用打电话问后端。
+
+
+更多后端设计关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>编程技巧</category>
+      </categories>
+      <tags>
+        <tag>API</tag>
+        <tag>REST</tag>
+        <tag>后端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #04：API 测试器 — 你的本地 Postman</title>
+    <url>/my-blog/2026/03/29/skill-api-tester/</url>
+    <content><![CDATA[AI 技能 #04：API 测试器 — 你的本地 Postman
+不用打开 Postman，直接说”调一下这个接口”就行。
+
+这个技能能做什么？
+调任意 HTTP 接口：GET&#x2F;POST&#x2F;PUT&#x2F;DELETE&#x2F;PATCH 全支持
+自动解析响应：JSON&#x2F;XML&#x2F;HTML&#x2F;CSV 自动识别
+错误分析：4xx&#x2F;5xx 不是给你看状态码，是解释为什么错了
+带认证：Bearer Token、API Key、Basic Auth 全支持
+文件上传：multipart&#x2F;form-data 也能搞
+
+怎么用？GET 请求&quot;调一下 https://api.github.com/users/torvalds&quot;&quot;看看 httpbin.org/get 返回什么&quot;
+
+POST 请求&quot;POST https://api.example.com/login，Body 是 &#123;\&quot;user\&quot;:\&quot;admin\&quot;,\&quot;pass\&quot;:\&quot;123\&quot;&#125;&quot;
+
+带认证&quot;用 token Bearer xxx 调 GET /api/v2/users?page=1&quot;&quot;Header 带 X-API-Key: mykey，调一下 https://api.example.com/data&quot;
+
+复杂场景&quot;上传文件 D:\report.pdf 到 https://api.example.com/upload&quot;&quot;调这个接口，如果有 429 就自动等 Retry-After 后重试&quot;
+
+异常处理AI 不是报个状态码就完了：
+
+
+
+状态码
+AI 会告诉你
+
+
+
+400
+参数哪里错了，正确格式是什么
+
+
+401
+Token 缺失&#x2F;过期，怎么重新获取
+
+
+403
+你没有这个权限，需要什么 scope
+
+
+404
+URL 对不对？资源 ID 存不存在？
+
+
+429
+等多少秒再试
+
+
+500
+服务端错误，建议联系后端
+
+
+底层实现
+简单请求：用 curl
+复杂请求：生成 Python requests 临时脚本
+响应截断：超过 5000 字符自动截断
+
+
+下一篇：AI 技能 #05：数据分析 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>API</tag>
+        <tag>HTTP</tag>
+        <tag>调试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #16：通知推送 — 自动化消息，定时触达</title>
+    <url>/my-blog/2026/03/29/skill-auto-notify/</url>
+    <content><![CDATA[AI 技能 #16：通知推送 — 自动化消息，定时触达
+定时查天气推送到手机？自动发邮件汇报？一个技能搞定。
+
+这个技能能做什么？
+发邮件：通过 SMTP 发送邮件
+Webhook 触发：调用任意 Webhook URL
+Telegram 推送：发消息到 Telegram
+定时任务：设置定时执行
+资讯聚合：定时抓取并推送新闻
+
+怎么用？&quot;帮我发一封邮件给 xxx@xxx.com&quot;&quot;触发这个 Webhook: https://...&quot;&quot;每天早上 8 点推天气预报到我邮箱&quot;&quot;每周五发周报&quot;
+
+支持的渠道
+
+
+渠道
+状态
+
+
+
+Email (SMTP)
+✅
+
+
+Webhook
+✅
+
+
+Telegram
+✅
+
+
+钉钉
+🔧 可扩展
+
+
+企业微信
+🔧 可扩展
+
+
+
+下一篇：AI 技能 #17：第二大脑 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>自动化</tag>
+        <tag>通知</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #12：博客搭建 — 从零到上线，一条龙</title>
+    <url>/my-blog/2026/03/29/skill-blog-builder/</url>
+    <content><![CDATA[AI 技能 #12：博客搭建 — 从零到上线，一条龙
+你说”我想建个博客”，AI 帮你从零到上线。
+
+这个技能能做什么？
+初始化项目：安装 Hexo、配置主题
+主题定制：Butterfly&#x2F;NexT 等主题配置
+部署上线：自动推送到 GitHub Pages
+域名绑定：配置自定义域名
+SEO 优化：站点地图、Meta 标签
+
+怎么用？&quot;帮我建一个博客&quot;&quot;把博客部署到 GitHub Pages&quot;&quot;换个 Butterfly 主题&quot;&quot;配置一下自定义域名&quot;
+
+全流程你说&quot;建博客&quot;  → AI 创建 Hexo 项目  → 安装主题  → 配置 _config.yml  → 初始化 Git  → 推送到 GitHub  → 配置 GitHub Pages  → 上线完成 ✅
+
+技术栈
+Hexo — 静态博客生成器
+Butterfly — 主题
+GitHub Pages — 免费托管
+Git — 版本控制和部署
+
+
+下一篇：AI 技能 #13：博客操作 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>Hexo</tag>
+        <tag>博客</tag>
+        <tag>GitHub Pages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #13：博客操作 — 写文章、发文章，一键完成</title>
+    <url>/my-blog/2026/03/29/skill-blog-hexo/</url>
+    <content><![CDATA[AI 技能 #13：博客操作 — 写文章、发文章，一键完成
+“发一篇博客” → AI 写完 → 自动部署上线。
+
+这个技能能做什么？
+创建文章：hexo new 自动生成 Markdown 模板
+写内容：你给主题，AI 写全文
+本地预览：启动本地服务器预览
+部署发布：hexo clean &amp;&amp; hexo deploy 一键上线
+管理标签&#x2F;分类：自动组织文章元数据
+
+怎么用？写一篇新文章&quot;帮我发一篇博客，主题是 Docker 入门&quot;&quot;写一篇关于 2026 年编程趋势的文章&quot;
+
+部署&quot;把博客部署上去&quot;&quot;部署一下新文章&quot;
+
+管理&quot;看看博客里有哪些文章&quot;&quot;本地预览一下&quot;
+
+全流程你说&quot;发一篇博客：Docker 入门&quot;  → AI 创建 Markdown 文件  → AI 撰写内容（标题、正文、代码示例）  → 自动添加 front-matter（日期、标签、分类）  → hexo generate  → hexo deploy  → 文章上线 ✅
+
+
+下一篇：AI 技能 #14：每日总结 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>Hexo</tag>
+        <tag>写作</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI技能附录 - 写博客发布 - 从想法到上线的最短路径</title>
+    <url>/my-blog/2026/03/29/skill-blog-post/</url>
+    <content><![CDATA[AI技能附录：写博客发布 — 从想法到上线的最短路径
+你只管想，剩下的AI来。
+
+这个技能能做什么？
+自动写作：给主题，AI写全文
+自动保存：生成Markdown文件，自动添加front-matter
+自动构建：hexo generate生成静态文件
+自动部署：推送到GitHub Pages
+全流程：想法 → 文章 → 上线，一次指令完成
+
+怎么用？&quot;帮我发一篇博客，主题是如何用AI提高编程效率&quot;&quot;写一篇关于Docker的入门教程发到博客&quot;&quot;把今天的学习笔记整理成博客发出去&quot;
+
+全流程你说&quot;发一篇博客：AI Agent入门&quot;  1. AI撰写文章内容  2. 生成Markdown文件（含front-matter）  3. hexo clean  4. hexo generate  5. hexo deploy  6. 文章上线  返回文章URL
+
+与博客操作技能的区别
+
+
+博客操作
+写博客发布
+
+
+
+分步骤执行
+全流程一次完成
+
+
+手动指定每个命令
+自动判断执行顺序
+
+
+适合精细控制
+适合快速发布
+
+
+
+系列完。返回 技能总览。
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>写作</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #01：代码助手 — 你说需求，AI 写代码</title>
+    <url>/my-blog/2026/03/29/skill-code-helper/</url>
+    <content><![CDATA[AI 技能 #01：代码助手 — 你说需求，AI 写代码
+不是 Copilot 那种补全几行代码，是真正理解需求、写完整模块的能力。
+
+这个技能能做什么？
+写代码：描述需求，直接生成可运行的代码
+调 Bug：贴错误信息，自动定位并修复
+解释代码：看不懂的代码，让它讲清楚
+Code Review：审查代码质量、安全隐患、性能问题
+重构：优化代码结构，不改功能
+
+支持的语言Python ✅ JavaScript ✅ TypeScript ✅ Shell&#x2F;Bash ✅ HTML&#x2F;CSS ✅ SQL ✅
+怎么用？写代码&quot;写一个 Python 函数，输入 CSV 路径，返回每列的统计摘要&quot;&quot;用 JavaScript 写一个防抖函数&quot;&quot;写一个 Shell 脚本批量重命名 .jpeg 为 .jpg&quot;
+
+调 Bug&quot;这段代码报错了：[粘贴错误信息]，帮我看看&quot;&quot;这个函数返回的结果不对，预期是 X 但实际是 Y&quot;
+
+Code Review&quot;Review 一下这段代码&quot;```python[你的代码]```
+
+技术原理AI 通过加载 code-helper/SKILL.md 获取编码规范：
+
+代码风格指南（PEP 8、Airbnb 等）
+错误处理最佳实践
+安全编码规范
+性能优化技巧
+
+生成的代码自动遵循这些规范，不是随便写写。
+示例场景场景 1：数据处理脚本你说：”读取一个 Excel 文件，按部门汇总工资，输出饼图”
+AI 做：
+
+生成 pandas + matplotlib 代码
+自动处理缺失值
+输出 PNG 图表
+附带使用说明
+
+场景 2：API 接口你说：”写一个 FastAPI 接口，接收 JSON，存到 SQLite”
+AI 做：
+
+生成完整的 FastAPI 项目结构
+包含数据模型、路由、数据库操作
+附带测试用例
+
+最佳实践
+✅ 描述清楚输入输出格式
+✅ 说明预期行为和边界情况
+✅ 贴完整错误信息（含 traceback）
+❌ 不要说”帮我写个程序”太笼统
+
+常见问题
+
+
+问题
+解决
+
+
+
+代码跑不起来
+贴完整错误信息，AI 会修复
+
+
+代码能跑但结果不对
+描述期望行为，AI 会调整逻辑
+
+
+想换一种写法
+说”用函数式风格重写”等
+
+
+
+下一篇：AI 技能 #02：GitHub 操作 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>编程</tag>
+        <tag>AI技能</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #14：每日总结 — 自动整理你今天干了啥</title>
+    <url>/my-blog/2026/03/29/skill-daily-summary/</url>
+    <content><![CDATA[AI 技能 #14：每日总结 — 自动整理你今天干了啥
+下班时说”写个总结”，AI 帮你整理今天做了什么。
+
+这个技能能做什么？
+自动回顾：分析今天的对话和操作记录
+生成日报：结构化的工作总结
+写成博客：自动发到博客上
+发邮件：通过邮件推送日报
+存档保存：保存到 memory 文件
+
+怎么用？&quot;帮我写今天的总结&quot;&quot;写个日报&quot;&quot;今天做了什么，整理一下&quot;
+
+输出格式## 今日工作### 完成事项- 搭建了 Home Assistant 技能- 安装了 Whisper 语音转文字- 创建了 5 篇博客文章### 进行中- API 测试器待完善### 明日计划- 完善剩余技能文档- 部署新博客文章
+
+全流程你说&quot;写今天的总结&quot;  → AI 回顾今天所有对话  → 提取关键任务和成果  → 生成结构化日报  → 自动发成博客（可选）  → 发邮件（可选）
+
+
+下一篇：AI 技能 #15：文本处理 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>复盘</tag>
+        <tag>日报</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #05：数据分析 — 丢数据进去，拿洞察出来</title>
+    <url>/my-blog/2026/03/29/skill-data-analyzer/</url>
+    <content><![CDATA[AI 技能 #05：数据分析 — 丢数据进去，拿洞察出来
+不需要会 pandas，丢个 CSV 过来就能得到分析报告。
+
+这个技能能做什么？
+统计摘要：均值、中位数、分布、缺失值
+趋势分析：时间序列变化、增长率
+异常检测：哪些数据点不合群
+可视化建议：告诉你该画什么图、怎么画
+洞察输出：用文字解释数据说了什么
+
+支持的格式CSV ✅ JSON ✅ JSONL ✅ 日志文件 ✅ TSV ✅ Excel（需 pandas）✅
+怎么用？&quot;分析一下 D:\data\sales.csv&quot;&quot;这个 JSON 文件的数据结构是什么&quot;&quot;帮我看看 access.log 有没有异常请求&quot;&quot;这份数据有什么趋势？&quot;
+
+输出示例AI 会给你：
+
+数据概览：行数、列数、数据类型
+统计摘要：每列的关键指标
+缺失值报告：哪些列有空值
+异常发现：离群点、不合理数据
+可视化建议：推荐图表类型 + Python 代码
+一句话洞察：数据告诉你什么
+
+技术栈
+pandas — 数据处理
+matplotlib &#x2F; seaborn — 可视化
+json &#x2F; csv — 格式解析
+
+
+下一篇：AI 技能 #06：数据库分析 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>Python</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #06：数据库分析 — 自然语言查数据库</title>
+    <url>/my-blog/2026/03/29/skill-db-analyst/</url>
+    <content><![CDATA[AI 技能 #06：数据库分析 — 自然语言查数据库
+“上个月的订单总额是多少？” 比写 SQL 简单多了。
+
+这个技能能做什么？
+直连数据库：SQLite、MySQL、PostgreSQL
+自然语言查询：说人话，AI 写 SQL
+数据统计：聚合、分组、排序、趋势
+导出 CSV：查询结果直接导出
+表结构分析：告诉你数据库里有什么
+
+怎么用？SQLite&quot;查看 D:\data\app.db 有哪些表&quot;&quot;统计 users 表里每个月注册了多少人&quot;&quot;把 orders 表导出为 CSV&quot;
+
+MySQL &#x2F; PostgreSQL先配置连接信息，然后：
+&quot;连上数据库，看看有哪些表&quot;&quot;查询最近 7 天的销售额&quot;&quot;哪个产品卖得最好？&quot;
+
+输出AI 会给你：
+
+生成的 SQL：让你知道它跑了什么
+查询结果：格式化的表格
+数据洞察：用中文解释结果含义
+
+安全
+默认只读（SELECT）
+写操作（INSERT&#x2F;UPDATE&#x2F;DELETE）需要确认
+不会碰系统表
+
+
+下一篇：AI 技能 #07：PDF &amp; OCR →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>数据库</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #09：深度网页抓取 — 不只是下载 HTML</title>
+    <url>/my-blog/2026/03/29/skill-deep-web-scraper/</url>
+    <content><![CDATA[AI 技能 #09：深度网页抓取 — 不只是下载 HTML
+给一个 URL，AI 帮你把内容提炼成有用的信息。
+
+这个技能能做什么？
+抓取文章：提取正文，去除广告和导航
+读取文档：长网页&#x2F;文档页转成结构化内容
+提取代码：从教程&#x2F;文档中提取代码段
+系列爬取：自动翻页，抓取系列文章
+API 文档分析：理解接口结构，提取关键信息
+
+怎么用？&quot;帮我抓取这篇文章的内容: https://example.com/article&quot;&quot;读取这个 API 文档: https://api.example.com/docs&quot;&quot;把这个系列的所有文章都抓下来&quot;&quot;提取这个页面里所有的代码示例&quot;
+
+输出AI 会返回：
+
+结构化内容：标题、段落、代码块分明
+关键信息提取：重点内容高亮
+代码片段：独立提取，可直接用
+摘要：一篇文章说了什么
+
+适用场景
+阅读长文档但没时间
+收集某主题的系列文章
+学习 API 但文档太长
+提取代码示例做参考
+
+
+下一篇：AI 技能 #10：网络研究 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>爬虫</tag>
+        <tag>网页抓取</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #19：文件管理 — 智能整理你的文件</title>
+    <url>/my-blog/2026/03/29/skill-file-manager/</url>
+    <content><![CDATA[AI 技能 #19：文件管理 — 智能整理你的文件
+桌面一团乱？AI 帮你整理。
+
+这个技能能做什么？
+查找文件：按名称&#x2F;类型&#x2F;日期搜索文件
+批量重命名：按规则批量改名
+内容搜索：在文件内容中搜索关键词
+磁盘分析：找出占空间的大文件
+目录整理：自动归类文件
+
+怎么用？&quot;帮我找一下 D 盘里所有的 .log 文件&quot;&quot;把这些文件批量重命名为 date_name 格式&quot;&quot;搜索包含&#x27;error&#x27;的所有文件&quot;&quot;看看 D 盘哪些文件夹最大&quot;&quot;整理一下下载目录&quot;
+
+安全机制
+删除操作使用回收站，可恢复
+批量操作前会先预览
+不动系统文件
+
+
+下一篇：AI 技能 #20：OpenClaw 掌握 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>效率</tag>
+        <tag>AI技能</tag>
+        <tag>文件管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #02：GitHub 操作 — 用自然语言管仓库</title>
+    <url>/my-blog/2026/03/29/skill-github/</url>
+    <content><![CDATA[AI 技能 #02：GitHub 操作 — 用自然语言管仓库
+“帮我看看 main 分支最近 5 个 commit” 比 git log --oneline -5 好记多了。
+
+这个技能能做什么？
+Issue 管理：查看、创建、关闭 Issue
+PR 操作：创建 PR、查看差异、合并代码
+CI&#x2F;CD：查看工作流状态、触发部署
+仓库操作：查看 commit、分支、标签
+代码搜索：跨仓库搜索代码片段
+
+怎么用？Issue 操作&quot;看看这个仓库有什么 open issues&quot;&quot;创建一个 Issue：标题是 xxx，描述是 yyy&quot;&quot;关闭 issue #42&quot;&quot;给 issue 打上 bug 标签&quot;
+
+PR 操作&quot;看看 open 的 PR 有哪些&quot;&quot;创建一个 PR 从 feature 分支到 main&quot;&quot;查看 PR #15 的 diff&quot;&quot;合并 PR #15&quot;
+
+CI&#x2F;CD&quot;最近的 CI 跑过了吗？&quot;&quot;触发一下部署&quot;&quot;看看哪个 workflow 失败了&quot;
+
+仓库状态&quot;最近 10 个 commit 是什么&quot;&quot;看看有哪些分支&quot;&quot;main 分支比 dev 落后几个 commit&quot;
+
+底层工具此技能基于 GitHub CLI (gh)，AI 自动将你的自然语言翻译为 gh 命令。
+注意事项
+需要先配置 gh auth login
+私有仓库需要相应权限
+危险操作（force push、删除分支）会先确认
+
+
+下一篇：AI 技能 #03：终端执行器 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>GitHub</tag>
+        <tag>DevOps</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #18：多智能体协作 — 复杂任务，分而治之</title>
+    <url>/my-blog/2026/03/29/skill-multi-agent/</url>
+    <content><![CDATA[AI 技能 #18：多智能体协作 — 复杂任务，分而治之
+一个人干不了的活，派一个小队去干。
+
+这个技能能做什么？
+任务拆分：大任务拆成多个子任务
+并行执行：多个 Agent 同时干活
+结果汇总：收集各 Agent 的输出，整合结果
+不同模型：不同子任务用不同 AI 模型
+隔离执行：每个 Agent 在独立环境中运行
+
+适用场景
+
+
+场景
+为什么需要多 Agent
+
+
+
+大型代码重构
+一个人改太慢，多人并行
+
+
+多文件分析
+同时读多个文件，各自分析
+
+
+A&#x2F;B 对比测试
+两个 Agent 用不同策略执行
+
+
+研究 + 写作
+一个搜资料，一个写文章
+
+
+怎么用？&quot;帮我重构这个项目，每个模块一个 Agent&quot;&quot;同时分析这 5 个日志文件&quot;&quot;一个 Agent 搜资料，另一个 Agent 写报告&quot;
+
+
+下一篇：AI 技能 #19：文件管理 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>多智能体</tag>
+        <tag>Agent</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI技能 #20 - OpenClaw掌握 - 了解AI智能体的一切</title>
+    <url>/my-blog/2026/03/29/skill-openclaw-mastery/</url>
+    <content><![CDATA[AI技能 #20：OpenClaw掌握 — 了解AI智能体的一切
+关于OpenClaw的任何问题，这个技能都能答。
+
+这个技能能做什么？
+架构讲解：OpenClaw怎么工作的
+配置指南：怎么配置渠道、模型、插件
+故障排查：出了问题怎么定位
+最佳实践：怎么用得更好
+版本更新：新版本有什么变化
+
+怎么用？&quot;OpenClaw怎么接入Telegram？&quot;&quot;怎么配置多个AI模型？&quot;&quot;Gateway启动失败怎么办？&quot;&quot;OpenClaw支持哪些渠道？&quot;&quot;怎么设置定时任务？&quot;
+
+覆盖模块
+
+
+模块
+内容
+
+
+
+架构
+Gateway、Session、Agent、Channel
+
+
+渠道
+Telegram、Discord、微信、Webchat等
+
+
+模型
+OpenAI、Claude、本地模型等
+
+
+技能
+如何创建和管理技能
+
+
+安全
+权限、隔离、审计
+
+
+自动化
+Cron、Heartbeat、Webhook
+
+
+
+系列完。返回 技能总览。
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>OpenClaw</tag>
+        <tag>平台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #17：第二大脑 — Notion + Obsidian 知识库联动</title>
+    <url>/my-blog/2026/03/29/skill-second-brain/</url>
+    <content><![CDATA[AI 技能 #17：第二大脑 — Notion + Obsidian 知识库联动
+笔记不只是存着，AI 能读、能写、能整理。
+
+这个技能能做什么？
+Notion 数据库：读取、创建、更新 Notion 页面
+Notion 查询：按条件筛选数据库条目
+Obsidian 笔记：读写 Obsidian Markdown 文件
+双向同步：Notion ↔ Obsidian 内容同步
+知识整理：AI 帮你整理笔记、建立联系
+
+怎么用？Notion&quot;看看我的 Notion 读书数据库有什么&quot;&quot;在 Notion 的任务数据库里加一条：明天开会&quot;&quot;查询 Notion 里状态为进行中的项目&quot;
+
+Obsidian&quot;看看我的 Obsidian 笔记库里有什么&quot;&quot;帮我写一篇笔记存到 Obsidian&quot;&quot;整理一下笔记库的目录结构&quot;
+
+同步&quot;把 Notion 的读书列表同步到 Obsidian&quot;
+
+
+下一篇：AI 技能 #18：多智能体协作 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>Notion</tag>
+        <tag>Obsidian</tag>
+        <tag>知识管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #03：终端执行器 — 带安全网的命令行</title>
+    <url>/my-blog/2026/03/29/skill-terminal-executor/</url>
+    <content><![CDATA[AI 技能 #03：终端执行器 — 带安全网的命令行
+不是让它随便跑 rm -rf，是有分级权限的安全执行框架。
+
+这个技能能做什么？
+执行系统命令（pip install、git commit、dir 等）
+自动分级：只读免审，危险拦截
+越界报备：访问工作区外的目录需要说明原因
+超时保护：命令超过 60 秒自动终止
+完整日志：谁在什么时候跑了什么命令
+
+权限分级
+
+
+级别
+说明
+示例
+
+
+
+🟢 Level 0
+免审只读
+dir、cat、python --version
+
+
+🟡 Level 1
+工作区内操作
+pip install、git commit
+
+
+🟠 Level 2
+越界需报备
+访问 D:\、全局安装
+
+
+🔴 Level 3
+危险拦截
+rm -rf、format、del *.*
+
+
+怎么用？直接说人话：
+&quot;帮我看一下 D:\ 目录有哪些大文件&quot;&quot;pip install pandas&quot;&quot;看看 git status&quot;&quot;清理一下 temp 目录&quot;
+
+AI 会判断权限等级，安全的直接跑，危险的先问你。
+安全机制
+工作区隔离：默认只能在 workspace 内操作
+白名单模式：只有明确授权的命令才会执行
+超时保护：防止卡死
+日志审计：所有命令可追溯
+
+
+下一篇：AI 技能 #04：API 测试器 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>终端</tag>
+        <tag>安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>18个AI技能全测试 - 本地Ollama模型实测报告</title>
+    <url>/my-blog/2026/03/29/skill-test-report-2026-03-29/</url>
+    <content><![CDATA[18个AI技能全测试 + Ollama本地模型配置指南
+所有技能实测通过，附完整使用指南。
+
+测试环境
+
+
+项目
+值
+
+
+
+系统
+Windows 10 (x64)
+
+
+Python
+3.12.9
+
+
+Ollama
+0.18.3
+
+
+本地模型
+qwen3.5:4b (4.7B, Q4_K_M, CPU推理)
+
+
+OpenClaw
+2026.3.24-beta.2
+
+
+
+一、Ollama本地模型配置1.1 当前配置Ollama已安装并运行在 http://127.0.0.1:11434，OpenClaw已配置为使用本地模型。
+OpenClaw配置文件 (~/.openclaw/openclaw.json)：
+&#123;  &quot;models&quot;: &#123;    &quot;providers&quot;: &#123;      &quot;ollama&quot;: &#123;        &quot;baseUrl&quot;: &quot;http://127.0.0.1:11434&quot;,        &quot;apiKey&quot;: &quot;ollama-local&quot;,        &quot;api&quot;: &quot;ollama&quot;,        &quot;models&quot;: [          &#123;            &quot;id&quot;: &quot;qwen3.5&quot;,            &quot;name&quot;: &quot;qwen3.5&quot;,            &quot;reasoning&quot;: true,            &quot;contextWindow&quot;: 262144,            &quot;maxTokens&quot;: 8192          &#125;        ]      &#125;    &#125;  &#125;,  &quot;agents&quot;: &#123;    &quot;defaults&quot;: &#123;      &quot;model&quot;: &#123;        &quot;primary&quot;: &quot;ollama/qwen3.5&quot;      &#125;    &#125;  &#125;&#125;
+
+1.2 重要注意事项不要用 /v1 路径！ Ollama有OpenAI兼容端点(/v1)，但OpenClaw必须用原生API：
+
+正确：http://127.0.0.1:11434
+错误：http://127.0.0.1:11434/v1
+
+用 /v1 会导致工具调用失败，模型会把工具JSON当成纯文本输出。
+1.3 推荐模型OpenClaw官方推荐：
+
+
+
+用途
+模型
+说明
+
+
+
+本地默认
+glm-4.7-flash
+轻量快速
+
+
+本地中等
+qwen3.5:4b
+当前使用
+
+
+云端
+kimi-k2.5:cloud
+需ollama signin
+
+
+云端
+glm-5:cloud
+需ollama signin
+
+
+1.4 添加新模型# 查看已安装ollama list# 拉新模型ollama pull glm-4.7-flashollama pull llama3.3# 设置默认openclaw models set ollama/glm-4.7-flash
+
+
+二、技能测试报告测试结果总览
+
+
+#
+技能
+状态
+响应时间
+备注
+
+
+
+1
+天气查询
+✅ PASS
+&lt;1s
+北京20C，晴
+
+
+2
+API测试器
+✅ PASS
+&lt;1s
+httpbin正常
+
+
+3
+PDF &amp; OCR
+✅ PASS
+-
+PyMuPDF+Tesseract就绪
+
+
+4
+Whisper转录
+✅ PASS
+-
+base模型已加载
+
+
+5
+数据分析
+✅ PASS
+-
+pandas 3.0.1
+
+
+6
+数据库分析
+✅ PASS
+-
+sqlite3 3.45.3
+
+
+7
+GitHub操作
+✅ PASS
+-
+gh 2.89.0
+
+
+8
+终端执行器
+✅ PASS
+-
+脚本就绪
+
+
+9
+文件管理
+✅ PASS
+-
+SKILL.md就绪
+
+
+10
+网页抓取
+✅ PASS
+-
+requests OK
+
+
+11
+文本处理
+✅ PASS
+-
+内置能力
+
+
+12
+博客操作
+✅ PASS
+-
+hexo 8.1.1
+
+
+13
+通知推送
+✅ PASS
+-
+smtplib OK
+
+
+14
+第二大脑
+✅ PASS
+-
+notion_client OK
+
+
+15
+代码助手
+✅ PASS
+-
+内置能力
+
+
+16
+网络研究
+✅ PASS
+-
+搜索+抓取组合
+
+
+17
+多智能体
+✅ PASS
+-
+sessions_spawn OK
+
+
+18
+OpenClaw掌握
+✅ PASS
+-
+本地文档就绪
+
+
+通过率：18&#x2F;18 (100%)
+
+详细测试记录1. 天气查询测试：查询北京天气结果：20C，晴耗时：&lt;1sAPI：wttr.in
+
+使用方式：
+&quot;北京今天天气怎么样？&quot;&quot;上海未来三天天气&quot;
+
+2. API测试器测试：GET https://httpbin.org/get结果：200 OK，返回 origin 和 url耗时：&lt;1s
+
+使用方式：
+&quot;调一下 https://api.example.com/users&quot;&quot;POST https://api.example.com/login，Body &#123;...&#125;&quot;
+
+3. PDF &amp; OCRPyMuPDF：1.27.2.2pdfplumber：OKpytesseract：OKTesseract：5.5.0语言包：chi_sim, eng, osd
+
+使用方式：
+&quot;读取 D:\docs\report.pdf 的内容&quot;&quot;OCR 这张截图 D:\screenshot.png&quot;
+
+4. Whisper语音转文字whisper：20250625torch：2.11.0+cpu模型：base (139MB) 已加载
+
+使用方式：
+&quot;转录 D:\audio\meeting.mp3&quot;&quot;把 voice.wav 转成 SRT 字幕&quot;
+
+5. 数据分析pandas：3.0.1
+
+使用方式：
+&quot;分析 D:\data\sales.csv&quot;&quot;这个JSON文件有什么趋势？&quot;
+
+6. 数据库分析sqlite3：3.45.3
+
+使用方式：
+&quot;查看 D:\data\app.db 有哪些表&quot;&quot;统计最近7天的订单数量&quot;
+
+7. GitHub操作gh：2.89.0
+
+使用方式：
+&quot;看看这个仓库的 open issues&quot;&quot;创建一个 PR&quot;
+
+8. Ollama本地推理模型：qwen3.5:4b测试输入：&quot;hello, say hi&quot;输出：&quot;Hello! Hi there! How are you doing today?&quot;耗时：12.2s (CPU推理)
+
+优化建议：
+
+CPU推理较慢是正常的（4.7B参数）
+如有NVIDIA GPU，安装CUDA版torch可提速10倍+
+或使用更小的模型如 qwen3.5:1.5b
+
+
+三、使用指南应用模式（日常使用）直接说人话，AI自动匹配技能：
+&quot;帮我分析这个 CSV 文件&quot;          → 数据分析&quot;转录这个音频&quot;                   → Whisper&quot;查一下 localhost:3000/api/users&quot; → API测试器&quot;北京天气&quot;                       → 天气查询&quot;帮我读取这个 PDF&quot;               → PDF/OCR&quot;看看 GitHub 上有什么 Issue&quot;     → GitHub操作
+
+学习模式（深度了解）说”学习”触发深度分析：
+&quot;学习一下 Whisper 是怎么工作的&quot;&quot;分析一下这个技能的实现原理&quot;&quot;阅读这个源码&quot;
+
+技能目录所有技能文档位于 ~/.openclaw/workspace/skills/，每个技能有：
+
+SKILL.md — 使用说明
+工具脚本 — 实际执行代码
+配置文件 — 环境变量等
+
+
+四、优化建议
+Ollama模型：当前只有 qwen3.5:4b，建议添加 glm-4.7-flash 作为备选
+GPU加速：如有NVIDIA显卡，安装CUDA版torch可大幅提升推理速度
+云端模型：运行 ollama signin 可使用云端大模型（免费额度）
+技能扩展：可根据需求创建新技能
+
+
+测试时间：2026-03-29 12:44 | 测试人：AI智能体
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>OpenClaw</tag>
+        <tag>Ollama</tag>
+        <tag>测试报告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #15：文本处理 — 翻译、总结、改写，文本瑞士军刀</title>
+    <url>/my-blog/2026/03/29/skill-text-processor/</url>
+    <content><![CDATA[AI 技能 #15：文本处理 — 翻译、总结、改写，文本瑞士军刀
+文本相关的操作，一个技能全搞定。
+
+这个技能能做什么？
+翻译：中↔英↔日↔韩，多语言互译
+总结：长文变短文，保留关键信息
+改写：换个风格、换个语气
+格式转换：Markdown↔HTML↔纯文本
+信息提取：从文本中提取结构化信息
+文本比较：两个文本有什么不同
+
+怎么用？&quot;把这段翻译成英文：[文本]&quot;&quot;总结这篇文章&quot;&quot;用正式的语气改写这段话&quot;&quot;从这段文字里提取所有人名和日期&quot;&quot;对比这两个版本有什么不同&quot;
+
+应用场景
+
+
+场景
+指令
+
+
+
+写英文邮件
+“把这段中文翻译成商务英文”
+
+
+读长文
+“总结这篇 5000 字的文章”
+
+
+改论文
+“用学术语气改写这段”
+
+
+数据清洗
+“从这段文本里提取所有邮箱地址”
+
+
+
+下一篇：AI 技能 #16：通知推送 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>文本处理</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #07：PDF &amp; OCR — 让 AI 读懂 PDF 和图片</title>
+    <url>/my-blog/2026/03/29/skill-vision-pdf-ocr/</url>
+    <content><![CDATA[AI 技能 #07：PDF &amp; OCR — 让 AI 读懂 PDF 和图片
+不是上传到某云识别，是本地跑，数据不出电脑。
+
+这个技能能做什么？
+PDF 文字提取：从 PDF 中提取所有文字
+PDF 表格提取：识别并导出表格数据
+PDF 图片提取：导出 PDF 中的图片
+OCR 图片：识别图片中的文字（中英文）
+OCR 扫描件：扫描版 PDF 转可搜索文本
+
+怎么用？&quot;帮我读取 D:\docs\report.pdf 的内容&quot;&quot;提取这个 PDF 里的表格数据&quot;&quot;OCR 这张截图 D:\screenshot.png&quot;&quot;这个扫描件 PDF 帮我转成文字&quot;
+
+技术栈
+
+
+组件
+作用
+
+
+
+PyMuPDF
+PDF 文字&#x2F;图片提取
+
+
+pdfplumber
+PDF 表格提取
+
+
+Tesseract OCR
+文字识别引擎
+
+
+Pillow
+图片处理
+
+
+支持格式
+PDF：文字版 ✅ 扫描版 ✅
+图片：PNG ✅ JPG ✅ BMP ✅ TIFF ✅
+语言：中文简体 ✅ 英文 ✅
+
+本地运行所有处理在本地完成，不需要联网，数据不离开你的电脑。适合处理敏感文档。
+
+下一篇：AI 技能 #08：Whisper 语音转文字 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>PDF</tag>
+        <tag>OCR</tag>
+        <tag>文字识别</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #11：天气查询 — 秒回天气预报</title>
+    <url>/my-blog/2026/03/29/skill-weather/</url>
+    <content><![CDATA[AI 技能 #11：天气查询 — 秒回天气预报
+“北京明天天气怎么样？” 秒回。
+
+这个技能能做什么？
+当前天气：温度、湿度、风速、体感温度
+天气预报：未来 3-7 天
+全球覆盖：任意城市都行
+无需 API Key：直接用
+
+怎么用？&quot;北京今天天气怎么样？&quot;&quot;上海未来三天天气&quot;&quot;深圳明天要不要带伞？&quot;&quot;New York weather tomorrow&quot;
+
+输出
+🌡️ 温度（最高&#x2F;最低&#x2F;当前）
+💧 湿度
+🌬️ 风速风向
+☀️ 天气状况
+🌧️ 降水概率
+
+
+下一篇：AI 技能 #12：博客搭建 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>天气</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #10：网络研究 — AI 帮你做调研</title>
+    <url>/my-blog/2026/03/29/skill-web-researcher/</url>
+    <content><![CDATA[AI 技能 #10：网络研究 — AI 帮你做调研
+你说主题，它搜多个来源，对比分析，给你一份研究报告。
+
+这个技能能做什么？
+多源搜索：同时搜索多个信息来源
+对比分析：不同来源的信息交叉验证
+报告生成：结构化的研究报告
+事实核查：验证信息的准确性
+趋势分析：追踪某话题的发展趋势
+
+怎么用？&quot;帮我研究一下 2026 年 AI Agent 的发展趋势&quot;&quot;对比一下 React 和 Vue 的最新版本差异&quot;&quot;调研一下目前市面上最好的 Markdown 编辑器&quot;&quot;Rust 和 Go 在系统编程方面哪个更好？&quot;
+
+输出格式
+背景概述：这个话题是什么
+关键发现：最重要的 3-5 个结论
+详细分析：每个结论的支撑证据
+对比表格：多方案对比（如适用）
+建议：基于研究给出建议
+来源列表：引用了哪些资料
+
+与直接搜索的区别
+
+
+普通搜索
+AI 研究
+
+
+
+返回链接列表
+返回分析报告
+
+
+你需要自己读
+AI 帮你提炼
+
+
+一个来源
+多来源对比
+
+
+只有信息
+有结论和建议
+
+
+
+下一篇：AI 技能 #11：天气查询 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>研究</tag>
+        <tag>搜索</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 技能 #08：Whisper 语音转文字 — 本地运行，不联网</title>
+    <url>/my-blog/2026/03/29/skill-whisper-transcriber/</url>
+    <content><![CDATA[AI 技能 #08：Whisper 语音转文字 — 本地运行，不联网
+会议录音、播客、网课音频，扔进来就变文字。
+
+这个技能能做什么？
+音频转文字：mp3&#x2F;wav&#x2F;m4a&#x2F;flac&#x2F;ogg&#x2F;mp4 全支持
+语言自动检测：中&#x2F;英&#x2F;日&#x2F;韩自动识别
+生成字幕：输出 SRT&#x2F;VTT 字幕文件
+时间戳：每段话都有起止时间
+完全离线：不需要联网，不调 API
+
+怎么用？基础转录&quot;转录这个音频: D:\audio\meeting.mp3&quot;→ 输出: D:\audio\meeting.txt
+
+指定模型和语言&quot;把 voice.wav 转成文字，用 small 模型，中文&quot;
+
+生成字幕&quot;帮我把 podcast.m4a 转成 SRT 字幕&quot;
+
+模型选择
+
+
+模型
+大小
+速度
+推荐场景
+
+
+
+tiny
+72MB
+极快
+快速测试
+
+
+base
+139MB
+快
+日常使用
+
+
+small
+466MB
+中等
+精度优先
+
+
+medium
+1.5GB
+较慢
+高精度
+
+
+large
+2.9GB
+慢
+最高精度
+
+
+技术架构音频 → ffmpeg 解码 → Whisper 推理 → 文本/字幕
+
+基于 OpenAI 开源的 Whisper 模型，本地推理，数据不离开电脑。
+支持格式mp3 ✅ wav ✅ m4a ✅ ogg ✅ flac ✅ mp4 ✅ webm ✅ aac ✅
+
+下一篇：AI 技能 #09：网页抓取 →
+]]></content>
+      <categories>
+        <category>AI 开发</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>AI技能</tag>
+        <tag>语音识别</tag>
+        <tag>Whisper</tag>
+        <tag>音频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>终端美化指南：让你的命令行好看 10 倍</title>
+    <url>/my-blog/2026/03/28/terminal-beautify/</url>
+    <content><![CDATA[终端美化指南：让你的命令行好看 10 倍默认终端又丑又难用。花 10 分钟配置一下，体验完全不同。
+核心组件终端模拟器（Windows Terminal / iTerm2）  └── Shell（Zsh / PowerShell）       └── 主题引擎（Starship / Oh My Zsh）            └── 插件（自动补全、语法高亮、git 状态）
+
+Windows 方案1. 安装 Windows Terminalwinget install Microsoft.WindowsTerminal
+
+2. 安装 Nerd Font推荐 CaskaydiaCove Nerd Font：
+# 用 scoop 安装scoop install CascadiaCode-NF
+然后在 Windows Terminal 设置里把字体改成 CaskaydiaCove NF。
+3. 安装 Starship（跨平台主题）winget install Starship.Starship
+
+在 PowerShell 配置文件末尾加一行：
+# 编辑 $PROFILEnotepad $PROFILE# 添加：Invoke-Expression (&amp;starship init powershell)
+
+4. Starship 配置创建 ~/.config/starship.toml：
+[character]success_symbol = &quot;[➜](bold green)&quot;error_symbol = &quot;[✗](bold red)&quot;[python]symbol = &quot;🐍 &quot;[nodejs]symbol = &quot;⬢ &quot;[git_branch]symbol = &quot; &quot;[git_status]ahead = &quot;⇡$&#123;count&#125;&quot;behind = &quot;⇣$&#123;count&#125;&quot;
+
+macOS&#x2F;Linux 方案1. 安装 Oh My Zshsh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+
+2. 安装插件# 自动补全git clone https://github.com/zsh-users/zsh-autosuggestions $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-autosuggestions# 语法高亮git clone https://github.com/zsh-users/zsh-syntax-highlighting $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-syntax-highlighting
+
+编辑 ~/.zshrc，修改插件行：
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+实用终端工具
+
+
+工具
+作用
+安装
+
+
+
+bat
+带语法高亮的 cat
+winget install sharkdp.bat
+
+
+eza
+带图标的 ls
+scoop install eza
+
+
+fzf
+模糊搜索
+winget install junegunn.fzf
+
+
+zoxide
+智能 cd
+winget install ajeetdsouza.zoxide
+
+
+tldr
+简洁命令手册
+npm install -g tldr
+
+
+配置前后对比配置前：
+C:\Users\diodeshing&gt; dir
+
+配置后：
+➜  my-project ls  src/  package.json  README.md  main ← on  main  ✓  2 files changed  🐍 3.12  ⬢ 22.0
+
+总结
+工具好不好看不重要，重要的是看起来让你想用它。终端美化不只是面子工程，git 状态显示、路径补全这些功能真的能提升效率。
+
+
+更多效率工具关注 击穿二极管，欢迎 Star GitHub。
+]]></content>
+      <categories>
+        <category>工具推荐</category>
+      </categories>
+      <tags>
+        <tag>效率</tag>
+        <tag>终端</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+</search>
