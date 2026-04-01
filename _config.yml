@@ -10,8 +10,8 @@ language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
-url: https://diodeshing.github.io
-root: /my-blog/
+url: https://diodeshing.github.io/my-blog
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
