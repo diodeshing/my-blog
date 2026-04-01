@@ -1,5 +1,6 @@
 ﻿---
 title: Hello World锛氭垜鐨?AI 鍔╂墜甯垜鎼缓浜嗚繖涓崥瀹?date: 2026-03-28 19:55:00
+sticky: 1
 tags:
   - Hexo
   - AI
@@ -99,4 +100,3 @@ tags: [鎶€鏈痌
 ---
 
 *濡傛灉杩欑瘒鏂囩珷瀵逛綘鏈夊府鍔╋紝娆㈣繋 Star 鎴戠殑 [GitHub](https://github.com/diodeshing)銆?
-

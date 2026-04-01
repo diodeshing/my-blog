@@ -1,0 +1,130 @@
+# Butterfly Theme Custom Config
+# Docs: https://butterfly.js.org/
+
+# --------------------------------------
+# 侧边栏设置
+# --------------------------------------
+
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: "探索 AI 与编程的无限可能"
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/diodeshing
+  card_announcement:
+    enable: true
+    content: "欢迎来到击穿二极管 🔧 分享 AI、编程与开源工具的实践经验"
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+  card_tags:
+    enable: true
+    limit: 40
+    orderby: random
+    order: 1
+  card_archives:
+    enable: true
+    type: monthly
+    format: MMMM YYYY
+    order: -1
+    limit: 8
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+
+# --------------------------------------
+# 搜索
+# --------------------------------------
+
+search:
+  use: local_search
+  placeholder: 搜索文章...
+  local_search:
+    preload: false
+    top_n_per_article: 1
+    unescape: false
+    pagination:
+      enable: false
+      hitsPerPage: 8
+
+# --------------------------------------
+# 社交链接
+# --------------------------------------
+
+social:
+  fab fa-github: https://github.com/diodeshing || GitHub
+
+# --------------------------------------
+# 页脚
+# --------------------------------------
+
+footer:
+  owner:
+    enable: true
+    since: 2026
+  copyright:
+    enable: true
+    version: true
+
+# --------------------------------------
+# 代码块
+# --------------------------------------
+
+code_blocks:
+  theme: light
+  macStyle: true
+  height_limit: 300
+  word_wrap: false
+  copy: true
+  language: true
+  shrink: true
+  fullpage: false
+
+# --------------------------------------
+# 文章设置
+# --------------------------------------
+
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+# --------------------------------------
+# 页内导航
+# --------------------------------------
+
+toc:
+  post: true
+  page: false
+  number: true
+  expand: false
+  scroll_percent: true
+
+# --------------------------------------
+# 文章版权
+# --------------------------------------
+
+post_copyright:
+  enable: true
+  decode: false
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
